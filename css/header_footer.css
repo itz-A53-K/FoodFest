@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+#navBar{
+    width: 100vw;
+    display: flex;
+    background-color: red;
+    align-items: center;
+    padding: 4px;
+}
+#navBar ul{
+    display: flex;
+    width: 60vw;
+    /* justify-content: space-between; */
+}
+#navBar ul li{
+    list-style: none;
+    margin-right: 4vw;
+    margin-left: 2vw;
+    cursor: pointer;
+}
+#navBar ul li a{
+    text-decoration: none;
+    color: black;
+
+}
+
+.loginContainer{
+    width: 40vw;
+    display: flex;
+    justify-content: end;
+}
+
+.loginBtn{
+    margin-right: 3vw;
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.01rem;
+    
+}
+
+.loginModule{
+    background-color: yellow;
+    display: inline-block;
+    width: auto;
+    height: 60vh;
+    top: 50px;
+    font-size: 2rem;
+    
+}
