@@ -7,6 +7,7 @@ if ($method =='POST') {
     $loginUserName = $_POST['loginUserName'];
     $loginPassword = $_POST['loginPassword'];
 
+    
     $checkUser="";
     $result= mysqli_query($conn,$$checkUser);
 
@@ -15,6 +16,11 @@ if ($method =='POST') {
     if ($noOfRows==1) 
     {
         $row=mysqli_fetch_assoc($result);
+
+        if(password_verify($loginPassword,$row[''])){
+            session_start();
+
+        }
         
     }
 
