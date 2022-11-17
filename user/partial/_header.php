@@ -9,7 +9,7 @@
         </ul>
 
         <div class="loginContainer">
-            <input type="button" class="loginBtn" id="loginBtn" value="Login">
+            <input type="button" class="loginBtn btn" id="loginBtn" value="Login">
         </div>
 
     </nav>
