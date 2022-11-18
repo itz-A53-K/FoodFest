@@ -16,7 +16,7 @@
 
     <section class="account">
         <div class="loginModule" id="loginModule">
-            <form action="user/partial/_loginFunctional.php" method="post" class="form">
+            <form action="user/partial/_loginFunctional.php" method="post" class="form" onsubmit="return CheckPassword()">
                 <h4>Login</h4>
                 <!-- <div>
                     <label for="loginUserName">User Name :</label>
@@ -34,7 +34,7 @@
             </form>
         </div>
         <div class="signupModule" id="signupModule">
-            <form action="user/partial/_signupFunctional.php" method="post" class="form">
+            <form action="user/partial/_signupFunctional.php" method="post" class="form" onsubmit="return reg_pass()">
                 <h4>Signup</h4>
                 <div>
                     <label for="userName">User Name :</label>
@@ -54,6 +54,7 @@
                 </div>
                 <button type="submit" class="btn">Signup</button>
             </form>
+            <script src="js/password_ver.js"></script>
         </div>
     </section>
 </body>
