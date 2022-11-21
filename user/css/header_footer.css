@@ -23,6 +23,7 @@
     cursor: pointer;
 }
 #navBar ul li a{
+    outline: none;
     text-decoration: none;
     color: black;
 
