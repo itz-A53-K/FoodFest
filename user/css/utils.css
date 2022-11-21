@@ -32,3 +32,8 @@ input{
     color: #6f7c81;
 
 }
+
+canvas{
+    pointer-events: none;
+    height: 5vh;
+}

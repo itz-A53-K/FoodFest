@@ -24,3 +24,40 @@
     padding: 10px;
     
 }
+
+
+
+
+.foodCategory{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.categories{
+    display: flex;
+}
+.line{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-left: 90px;
+    border-bottom: dotted 1px solid #000;
+}
+.line img{
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    border-radius: 80px;
+}
+
+.foodName{
+
+    padding: 2px ;
+    background-color: aqua;
+}

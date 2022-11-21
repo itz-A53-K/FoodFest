@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="user/css/header_footer.css">
 </head>
 
-<body>
-    <?php include 'user/partial/_header.php';?>
-    
+<body onload="createCaptcha()">
+    <?php include 'user/partial/_header.php';
+    include 'user/partial/_dbConnect.php';
+    ?>
+
     <section class="account">
         <div class="loginModule" id="loginModule">
             <form action="user/partial/_loginFunctional.php" method="post" class="form">
@@ -34,7 +36,8 @@
             </form>
         </div>
         <div class="signupModule" id="signupModule">
-            <form action="user/partial/_signupFunctional.php" method="post" class="form" onsubmit="return regValidate()">
+            <form action="user/partial/_signupFunctional.php" method="post" class="form"
+                onsubmit="return regValidate(), validateCaptcha()">
                 <h4>Signup</h4>
                 <div>
                     <label for="userName">User Name :</label>
@@ -42,23 +45,51 @@
                 </div>
                 <div>
                     <label for="userEmail">Email :</label>
-                    <input type="email" id="userEmail" name="userEmail" placeholder="example@example.com" >
+                    <input type="email" id="userEmail" name="userEmail" placeholder="example@example.com">
                 </div>
                 <div>
                     <label for="userPass">Password :</label>
                     <input type="password" id="userPass" name="userPass" placeholder="Enter 6-18 characters">
-                    
+
                 </div>
                 <div>
                     <label for="confirmPass">Confirm Password :</label>
                     <input type="password" id="confirmPass" name="confirmPass" placeholder="Retype your password">
+                </div>
+                <div>
+                    <!-- captcha creation -->
+                    <div id="captcha">
+                    </div>
+                    <input type="text" placeholder="Captcha" id="cpatchaTextBox" />
+                    <!-- <button type="submit">Submit</button> -->
                 </div>
                 <button type="submit" class="btn btnLarge">Signup</button>
                 <!-- <button type="reset" class="btn">Reset</button> -->
             </form>
         </div>
     </section>
-    
+
+
+    <section class="foodCategory" id="foodCategory">
+        <h3>Categories</h3>
+        <div class="categories">
+            <?php
+            $sql= "SELECT * FROM `food categories`";
+            $result= mysqli_query($conn,$sql);
+
+            while($row=mysqli_fetch_assoc($result)){
+                echo '
+                    <div class="line">
+                        <img src="img/burger.jpeg" alt="" srcset="">
+
+                        <h4 class="foodName">'.$row["category_name"].'</h4>
+
+                    </div>';
+            }
+            ?>
+        </div>  
+    </section>
+
     <script src="user/js/password_ver.js"></script>
 </body>
 

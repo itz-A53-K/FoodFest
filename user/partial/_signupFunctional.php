@@ -20,7 +20,7 @@
             echo 'Already Have An Account .';
         }
         else {
-                if ($userPass == $confirmPass) {
+                if ($userEmail !="" && $userPass == $confirmPass) {
                     //creating password hash (increption)
                     $hash = password_hash($userPass,PASSWORD_DEFAULT);
 
