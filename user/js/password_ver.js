@@ -31,6 +31,9 @@ function regValidate()
         alert('Passwords do not match')
         return false;
     }
+    else{
+        validateCaptcha();
+    }
     
 
 }
@@ -51,16 +54,17 @@ function createCaptcha()
         captcha.push(charsArray[index]);
         else i--;
     }
-    var canv = document.createElement("canvas");
-    canv.id = "captcha";
-    canv.width = 100;
-    canv.height = 50;
-    var ctx = canv.getContext("2d");
-    ctx.font = "px Georgia";
-    ctx.strokeText(captcha.join(""), 0, 30);
+    // var canv = document.createElement("canvas");
+    // canv.id = "captcha";
+    // canv.width = 100;
+    // canv.height = 50;
+    // var ctx = canv.getContext("2d");
+    // ctx.font = "5px Georgia";
+    // ctx.strokeText(captcha.join(""), 0, 30);
     //storing captcha so that can validate you can save it somewhere else according to your specific requirements
     code = captcha.join("");
-    document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
+    // document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
+    document.getElementById("captcha").innerHTML= code; // adds the canvas to the h2 element
 }
     
 function validateCaptcha() 
@@ -71,8 +75,8 @@ function validateCaptcha()
     }
     else
     {
-        alert("Invalid Captcha. try Again");
-        return false;
+        alert("Captcha do not match. Try Again");
         createCaptcha();
+        return false;
     }
 }

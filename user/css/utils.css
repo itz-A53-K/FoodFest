@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+/* font-family: 'Rubik Distressed', cursive;
+font-family: 'Rubik Glitch', cursive; 
+font-family: 'Indie Flower', cursive;*/
+
+
 .btn{
     /* width: fit-content; */
     padding: 4px;
@@ -30,10 +37,14 @@ input{
     height: 26px;
     width: 15vw;
     color: #6f7c81;
+    margin: 3px 0;
 
 }
 
-canvas{
-    pointer-events: none;
+#captcha{
+    font-size: 25px;
+    /* font-family: 'Indie Flower', cursive; */
+    font-style: italic;
     height: 5vh;
+    letter-spacing: 5px;
 }

@@ -58,8 +58,9 @@
                 </div>
                 <div>
                     <!-- captcha creation -->
-                    <div id="captcha">
-                    </div>
+                    <!-- <div id="captcha">
+                    </div> -->
+                    <h2 id="captcha"></h2> 
                     <input type="text" placeholder="Captcha" id="cpatchaTextBox" />
                     <!-- <button type="submit">Submit</button> -->
                 </div>
@@ -74,7 +75,7 @@
         <h3>Categories</h3>
         <div class="categories">
             <?php
-            $sql= "SELECT * FROM `food categories`";
+            $sql= "SELECT * FROM `food_categories`";
             $result= mysqli_query($conn,$sql);
 
             while($row=mysqli_fetch_assoc($result)){
@@ -82,7 +83,7 @@
                     <div class="line">
                         <img src="img/burger.jpeg" alt="" srcset="">
 
-                        <h4 class="foodName">'.$row["category_name"].'</h4>
+                        <h4 class="foodName"> <a href="/productivity/FOODFEST/food_Item.php?category_id='. $row["category_id"].'">'.$row["category_name"].'</a></h4>
 
                     </div>';
             }
