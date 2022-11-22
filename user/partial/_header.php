@@ -8,7 +8,7 @@
             <li class="listItem"><a href="#">ljdj</a></li>
         </ul>
 
-        <form class="search" method="get" action ="/productivity/FOODFEST/srcResult.php">
+        <form class="search" method="get" action ="/FOODFEST/srcResult.php">
             <input type="search" name="srcInp" id="srcInp" placeholder="Search your food">
             <button type="submit" id="srcBtn" class="btn">Search</button>
         </form>

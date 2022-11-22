@@ -81,9 +81,9 @@
             while($row=mysqli_fetch_assoc($result)){
                 echo '
                     <div class="line">
-                        <img src="img/burger.jpeg" alt="" srcset="">
+                        <img src="img/'.$row["category_img_path"].'" alt="" srcset="">
 
-                        <h4 class="foodName"> <a href="/productivity/FOODFEST/food_Item.php?category_id='. $row["category_id"].'">'.$row["category_name"].'</a></h4>
+                        <h4 class="foodName"> <a href="/FOODFEST/food_Item.php?category_id='. $row["category_id"].'">'.$row["category_name"].'</a></h4>
 
                     </div>';
             }

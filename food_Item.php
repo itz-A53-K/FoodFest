@@ -23,7 +23,7 @@
 
 echo '
 <div class="line">
-    <img src="img/burger.jpeg" alt="" srcset="">
+    <img src="img/'.$row["food_Item_img_path"].'" alt="" srcset="">
 
     <h4 class="foodName">'.$row["food_Name"].'</h4>
     <span>₹'.$row["price"].'</span>

@@ -64,11 +64,14 @@
     width: 150px;
     height: 150px;
     margin: 5px;
-    border-radius: 80px;
+    border-radius: 25px;
 }
 
 .foodName{
 
     padding: 2px ;
     background-color: aqua;
+}
+.foodName a{
+    text-decoration: none;
 }
