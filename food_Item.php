@@ -26,10 +26,10 @@ echo '
     <img src="img/'.$row["food_Item_img_path"].'" alt="" srcset="">
 
     <h4 class="foodName">'.$row["food_Name"].'</h4>
-    <span>₹'.$row["price"].'</span>
+    <span>₹'.$row["price"].'</span> 
     <p>'.$row["food_Desc"].'</p>
 
-</div>';
+</div>'; //ctrl+shift+4 = ₹
         
     }     
    
