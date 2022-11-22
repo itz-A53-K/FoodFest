@@ -14,6 +14,26 @@
     include 'user/partial/_dbConnect.php';
     include 'user/partial/_header.php';
     ?>
+    <?php
+    $category_id= $_GET['category_id'];
+    $sql= "SELECT * FROM `food_items` WHERE category_id = $category_id";
+    $result = mysqli_query($conn,$sql);
+
+    while($row = mysqli_fetch_assoc($result)){
+
+echo '
+<div class="line">
+    <img src="img/burger.jpeg" alt="" srcset="">
+
+    <h4 class="foodName">'.$row["food_Name"].'</h4>
+    <span>₹'.$row["price"].'</span>
+    <p>'.$row["food_Desc"].'</p>
+
+</div>';
+        
+    }     
+   
+   ?>
 
 </body>
 </html>

@@ -31,9 +31,9 @@ function regValidate()
         alert('Passwords do not match')
         return false;
     }
-    else{
-        validateCaptcha();
-    }
+    // else{
+    //     validateCaptcha();
+    // }
     
 
 }
