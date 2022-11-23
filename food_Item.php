@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="user/css/style.css">
     <link rel="stylesheet" href="user/css/header_footer.css">
 </head>
+
 <body>
     <?php
     include 'user/partial/_dbConnect.php';
@@ -29,11 +31,19 @@ echo '
     <span>₹'.$row["price"].'</span> 
     <p>'.$row["food_Desc"].'</p>
 
-</div>'; //ctrl+shift+4 = ₹
+    <form action="user/partial/_addToCart.php" method="post" >
+      <input type="hidden" value="'.$row["food_Id"].'" name="food_Id">
+      <input type="hidden" value="'. $_SERVER['REQUEST_URI'].'" name="currentUrl">
+        <input type="number" name="quantity" id="">
+        <button class="btn" type="submit">Add to cart</button>
+        
+    </form> 
+</div>';//ctrl+shift+4 = ₹
         
     }     
    
    ?>
 
 </body>
+
 </html>

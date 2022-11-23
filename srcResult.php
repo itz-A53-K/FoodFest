@@ -32,13 +32,20 @@
             //         $srcResults=true;
             echo '
             <div class="line">
-                <img src="img/'.$row["food_Item_img_path"].'" alt="" srcset="">
+    <img src="img/'.$row["food_Item_img_path"].'" alt="" srcset="">
 
-                <h4 class="foodName">'.$row["food_Name"].'</h4>
-                <span>₹'.$row["price"].'</span>
-                <p>'.$row["food_Desc"].'</p>
+    <h4 class="foodName">'.$row["food_Name"].'</h4>
+    <span>₹'.$row["price"].'</span> 
+    <p>'.$row["food_Desc"].'</p>
 
-            </div>';
+    <form action="user/partial/_addToCart.php" method="post" >
+      <input type="hidden" value="'.$row["food_Id"].'" name="food_Id">
+      <input type="hidden" value="'. $_SERVER['REQUEST_URI'].'" name="currentUrl">
+        <input type="number" name="quantity" id="">
+        <button class="btn" type="submit">Add to cart</button>
+        
+    </form> 
+</div>';
                     
                       
                }

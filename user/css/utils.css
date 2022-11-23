@@ -48,3 +48,10 @@ input{
     height: 5vh;
     letter-spacing: 5px;
 }
+#loginCaptcha{
+    font-size: 25px;
+    /* font-family: 'Indie Flower', cursive; */
+    font-style: italic;
+    height: 5vh;
+    letter-spacing: 5px;
+}

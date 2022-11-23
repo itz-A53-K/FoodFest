@@ -18,7 +18,7 @@
 
     <section class="account">
         <div class="loginModule" id="loginModule">
-            <form action="user/partial/_loginFunctional.php" method="post" class="form">
+            <form action="user/partial/_loginFunctional.php" method="post" class="form" onsubmit="validateCaptcha()">
                 <h4>Login</h4>
                 <!-- <div>
                     <label for="loginUserName">User Name :</label>
@@ -31,6 +31,14 @@
                 <div>
                     <label for="loginPassword">Password :</label>
                     <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <div>
+                    <!-- captcha creation -->
+                    <!-- <div id="captcha">
+                    </div> -->
+                    <h2 id="loginCaptcha"></h2> 
+                    <input type="text" placeholder="Captcha" class="cpatchaTextBox" />
+                    <!-- <button type="submit">Submit</button> -->
                 </div>
                 <button type="submit" class="btn btnLarge">Login</button>
             </form>
@@ -61,7 +69,7 @@
                     <!-- <div id="captcha">
                     </div> -->
                     <h2 id="captcha"></h2> 
-                    <input type="text" placeholder="Captcha" id="cpatchaTextBox" />
+                    <input type="text" placeholder="Captcha" class="cpatchaTextBox" />
                     <!-- <button type="submit">Submit</button> -->
                 </div>
                 <button type="submit" class="btn btnLarge">Signup</button>

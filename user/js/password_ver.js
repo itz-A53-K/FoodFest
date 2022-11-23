@@ -65,11 +65,12 @@ function createCaptcha()
     code = captcha.join("");
     // document.getElementById("captcha").appendChild(canv); // adds the canvas to the body element
     document.getElementById("captcha").innerHTML= code; // adds the canvas to the h2 element
+    document.getElementById("loginCaptcha").innerHTML= code; // adds the canvas to the h2 element
 }
     
 function validateCaptcha() 
 {
-    if (document.getElementById("cpatchaTextBox").value == code) 
+    if (document.getElementsByClassName("cpatchaTextBox").value == code) 
     {
         
     }
