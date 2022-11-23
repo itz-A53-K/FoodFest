@@ -17,56 +17,71 @@
     ?>
 
     <section class="account">
-        <div class="loginModule" id="loginModule">
-            <form action="user/partial/_loginFunctional.php" method="post" class="form">
-                <h4>Login</h4>
-                <!-- <div>
-                    <label for="loginUserName">User Name :</label>
-                    <input type="text" id="loginUserName" name="loginUserName">
-                </div> -->
-                <div>
-                    <label for="loginUserEmail">Email :</label>
-                    <input type="email" id="loginUserEmail" name="loginUserEmail" required>
-                </div>
-                <div>
-                    <label for="loginPassword">Password :</label>
-                    <input type="password" id="loginPassword" name="loginPassword" required>
-                </div>
-                <button type="submit" class="btn btnLarge">Login</button>
-            </form>
-        </div>
-        <div class="signupModule" id="signupModule">
-            <form action="user/partial/_signupFunctional.php" method="post" class="form"
-                onsubmit="return regValidate(), validateCaptcha()">
-                <h4>Signup</h4>
-                <div>
-                    <label for="userName">User Name :</label>
-                    <input type="text" id="userName" name="userName" placeholder="">
-                </div>
-                <div>
-                    <label for="userEmail">Email :</label>
-                    <input type="email" id="userEmail" name="userEmail" placeholder="example@example.com">
-                </div>
-                <div>
-                    <label for="userPass">Password :</label>
-                    <input type="password" id="userPass" name="userPass" placeholder="Enter 6-18 characters">
+        <div class="container">
+        <div class="row">
+        <div class="col">
+        <div class="form-container">
 
-                </div>
-                <div>
-                    <label for="confirmPass">Confirm Password :</label>
-                    <input type="password" id="confirmPass" name="confirmPass" placeholder="Retype your password">
-                </div>
-                <div>
-                    <!-- captcha creation -->
-                    <!-- <div id="captcha">
-                    </div> -->
-                    <h2 id="captcha"></h2> 
-                    <input type="text" placeholder="Captcha" id="cpatchaTextBox" />
-                    <!-- <button type="submit">Submit</button> -->
-                </div>
-                <button type="submit" class="btn btnLarge">Signup</button>
-                <!-- <button type="reset" class="btn">Reset</button> -->
-            </form>
+        <div class="form-btn">
+                        <span onclick="login()">Login</span>
+                        <span onclick="register()">Register</span>
+                        <hr id="Indicator">
+        </div>
+
+            <div class="loginModule" id="loginModule">
+                <form action="user/partial/_loginFunctional.php" method="post" class="form" id="LoginForm">
+                    <!-- <h4>Login</h4> -->
+                    <div class="login">
+                        <!-- <label for="loginUserEmail">Email :</label> -->
+                        <input type="email" id="loginUserEmail" placeholder="Email" name="loginUserEmail" required>
+                    </div>
+                    <div class="login">
+                        <!-- <label for="loginPassword">Password :</label> -->
+                        <input type="password" id="loginPassword" placeholder="Password" name="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btnLarge">Login</button>
+                </form>
+            </div>
+
+
+
+            
+            <div class="signupModule" id="signupModule">
+                <form action="user/partial/_signupFunctional.php" method="post" class="form" id="RegForm"
+                    onsubmit="return regValidate(), validateCaptcha()">
+                    <!-- <h4>Signup</h4> -->
+                    <div>
+                        <!-- <label for="userName">User Name :</label> -->
+                        <input type="text" id="userName" name="userName" placeholder="User Name">
+                    </div>
+                    <div>
+                        <!-- <label for="userEmail">Email :</label> -->
+                        <input type="email" id="userEmail" name="userEmail" placeholder="Email">
+                    </div>
+                    <div>
+                        <!-- <label for="userPass">Password :</label> -->
+                        <input type="password" id="userPass" name="userPass" placeholder="Password">
+
+                    </div>
+                    <div>
+                        <!-- <label for="confirmPass">Confirm Password :</label> -->
+                        <input type="password" id="confirmPass" name="confirmPass" placeholder="Confirm Password">
+                    </div>
+                    <div>
+                        <!-- captcha creation -->
+                        <!-- <div id="captcha">
+                        </div> -->
+                        <h2 id="captcha"></h2> 
+                        <input type="text" placeholder="Captcha" id="cpatchaTextBox" />
+                        <!-- <button type="submit">Submit</button> -->
+                    </div>
+                    <button type="submit" class="btn btnLarge">Signup</button>
+                    <!-- <button type="reset" class="btn">Reset</button> -->
+                </form>
+            </div>
+        </div>
+        </div>
+        </div>
         </div>
     </section>
 
@@ -92,6 +107,7 @@
     </section>
 
     <script src="user/js/password_ver.js"></script>
+    <script src="user/js/loginDesign.js"></script>
 </body>
 
 </html>

@@ -1,14 +1,157 @@
-.search{
-    display: flex;
-    align-items: center;
-}
-.search input{
-    height:25px;
-    margin: 2px;
-    padding: 4px 15px;
-    color: rgb(31, 30, 30);
+
+.account{
+    padding: 50px;
+    background: radial-gradient(#fff,#ffd6d6);
 }
 
+.form-container{
+    background: #fff;
+    width: 380px;
+    height: 560px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0px;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    /* overflow: hidden; */
+}
+
+.form-container span{
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+
+.form-btn{
+    display: inline-block;
+}
+
+.form-container form{
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+}
+
+.account input{
+    width:100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+
+.btnLarge{
+    width:  100%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+
+.btnLarge:focus{
+    outline: none;
+}
+
+#LoginForm{
+    left: -300px;
+}
+
+#RegForm{
+    left: 0px;
+}
+
+form a{
+    font-size: 12px;
+}
+
+#Indicator{
+    width: 100px;
+    border: none;
+    background: #ff523b;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.form-container{
+    background: #fff;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0px;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+#LoginForm{
+    left: -300px;
+}
+
+#RegForm{
+    left: 0px;
+}
+
+/ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 .account{
     display: flex;
 }
@@ -28,17 +171,17 @@
 .loginModule{
     background-color: yellow;
     width: auto;
-    /* height: 60vh; */
+    /* height: 60vh; 
     top: 50px;
     font-size: 2rem;
     margin:10px;
     padding: 10px;
     
-}
+} */
 
 
 
-
+/* 
 .foodCategory{
     display: flex;
     align-items: center;
@@ -75,4 +218,6 @@
 .foodName a{
     text-decoration: none;
     color: black;
-}
+} */
+
+
