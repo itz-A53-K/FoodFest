@@ -29,7 +29,8 @@
         </div>
 
             <div class="loginModule" id="loginModule">
-                <form action="user/partial/_loginFunctional.php" method="post" class="form" id="LoginForm">
+                <form action="user/partial/_loginFunctional.php" method="post" class="form" id="LoginForm" 
+               onsubmit="validateCaptchaL()">
                     <!-- <h4>Login</h4> -->
                     <div class="login">
                         <!-- <label for="loginUserEmail">Email :</label> -->
@@ -38,6 +39,14 @@
                     <div class="login">
                         <!-- <label for="loginPassword">Password :</label> -->
                         <input type="password" id="loginPassword" placeholder="Password" name="loginPassword" required>
+                    </div>
+                    <div>
+                        <!-- captcha creation -->
+                        <!-- <div id="captcha">
+                        </div> -->
+                        <h2 id="captcha1"></h2> 
+                        <input type="text" placeholder="Captcha" id="cpatchaTextBox1" />
+                        <!-- <button type="submit">Submit</button> -->
                     </div>
                     <button type="submit" class="btn btnLarge">Login</button>
                 </form>
@@ -48,7 +57,7 @@
             
             <div class="signupModule" id="signupModule">
                 <form action="user/partial/_signupFunctional.php" method="post" class="form" id="RegForm"
-                    onsubmit="return regValidate(), validateCaptcha()">
+                    onsubmit="return regValidate(),validateCaptcha()">
                     <!-- <h4>Signup</h4> -->
                     <div>
                         <!-- <label for="userName">User Name :</label> -->
@@ -72,7 +81,7 @@
                         <!-- <div id="captcha">
                         </div> -->
                         <h2 id="captcha"></h2> 
-                        <input type="text" placeholder="Captcha" id="cpatchaTextBox" />
+                        <input type="text" placeholder="Captcha" id="cpatchaTextBox" >
                         <!-- <button type="submit">Submit</button> -->
                     </div>
                     <button type="submit" class="btn btnLarge">Signup</button>

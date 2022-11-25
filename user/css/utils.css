@@ -5,8 +5,8 @@ font-family: 'Rubik Glitch', cursive;
 font-family: 'Indie Flower', cursive;*/
 
 
-.btn{
-    /* width: fit-content; */
+/* .btn{
+    /* width: fit-content; 
     padding: 4px;
     margin: 4px;
     border: 1px solid black;
@@ -18,13 +18,13 @@ font-family: 'Indie Flower', cursive;*/
     outline: none;
     transition: .3s ease-in-out;
     
-}
-.btn:hover{
+} */
+/* .btn:hover{
     color: white;
     background-color: black;
-}
+} */
 
-.btnLarge{
+/* .btnLarge{
     width: 15vw;
 }
 
@@ -39,12 +39,5 @@ input{
     color: #6f7c81;
     margin: 3px 0;
 
-}
+} */
 
-#captcha{
-    font-size: 25px;
-    /* font-family: 'Indie Flower', cursive; */
-    font-style: italic;
-    height: 5vh;
-    letter-spacing: 5px;
-}
