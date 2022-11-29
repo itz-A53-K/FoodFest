@@ -25,12 +25,29 @@ if ($method =='POST') {
 
         if($verifyPass){
             
-            echo ' verified';
+            // $value=$loginUserEmail;
+            // setcookie("loggedin",$value,time()+(60*60));
             
+                session_start();
+                $_SESSION['loggedin'] = true;
+                $_SESSION['userName'] = $row['userName'];
+                $_SESSION['user_id'] = $row['user_id'];
+                header ("Location:/FoodFest/index.php");
+                exit();
+                        
         }
         else{
             echo 'not verified';
         }
+        
+        
+        // if(isset($_COOKIE["loggedin"])){
+        //     header ("Location:/FoodFest/index.php");
+        // }
+        // else{
+        //     echo "\nkjdnfklsdf";
+        // }
+        
         
     }
     else{

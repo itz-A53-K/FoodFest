@@ -1,22 +1,27 @@
-
-.account{
-    padding: 50px;
-    background: radial-gradient(#fff,#ffd6d6);
+.account {
+    margin-top: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 50px; */
+    height: 92vh;
+    background: radial-gradient(rgba(255, 255, 255, 0.553), #ffd6d655);
 }
 
-.form-container{
-    background: rgb(214, 182, 182);
+.form-container {
+    background: rgb(210, 182, 182);
     width: 400px;
     height: 500px;
     position: relative;
     text-align: center;
     padding: 40px 0px;
     margin: auto;
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border-radius: 10px;
 }
 
-.form-container span{
+.form-container span {
     font-weight: bold;
     padding: 0 10px;
     color: #555;
@@ -25,66 +30,71 @@
     display: inline-block;
 }
 
-.form-btn{
+.form-btn {
     display: inline-block;
 }
+.form-btn span {
+    color: rgb(30, 28, 28);
+}
 
-.form-container form{
-    max-width: 300px;
+.form-container form {
+    /* max-width: 300px; */
+    width: 17vw;
     padding: 0 18px;
     position: absolute;
     top: 110px;
     transition: transform 1s;
 }
 
-.account input{
-    width:110%;
+.account input {
+    /* width: 100%; */
     height: 40px;
     margin: 10px 0;
     padding: 0 10px;
     border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: .95rem;
 }
 
-.btnLarge{
-    width:  100%;
+.btnLarge {
+    width: 15vw;
+    /* width: 100%; */
     border: none;
     cursor: pointer;
     margin: 10px 0;
-
-
     display: inline-block;
-
-    background: #ff532b; 
- 
+    background: #ff532b;
     color: rgb(0, 0, 0);
- 
     padding: 7px 25px;
- 
-    margin: 30px 21px;
- 
+    /* margin: 30px 21px; */
     border-radius: 20px;
- 
-    transition: background-color 0.5s ease;
+    transition: 0.5s ease;
 }
 
 
-.btnLarge:focus{
+.btnLarge:focus {
     outline: none;
 }
 
-#LoginForm{
+.btnLarge:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 110, 110);
+}
+
+#LoginForm {
     left: -300px;
 }
 
-#RegForm{
+#RegForm {
     left: 46px;
 }
 
-form a{
+form a {
     font-size: 12px;
 }
 
-#Indicator{
+#Indicator {
     width: 100px;
     border: none;
     background: #ff523b;
@@ -95,25 +105,19 @@ form a{
 }
 
 
-#captcha1{
+#captcha1 {
     font-size: 25px;
     /* font-family: 'Indie Flower', cursive; */
     font-style: italic;
     height: 5vh;
     letter-spacing: 5px;
-   
+
 }
-#captcha{
+
+#captcha {
     font-size: 25px;
     /* font-family: 'Indie Flower', cursive; */
     font-style: italic;
     height: 5vh;
     letter-spacing: 5px;
 }
-
-
-.btn:hover{
-    color: rgb(255, 255, 255);
-    background-color: rgb(255, 110, 110);
-} 
-

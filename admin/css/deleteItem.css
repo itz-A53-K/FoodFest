@@ -1,0 +1,46 @@
+.deleteModal{
+    width: 82vw;
+    height: 99vh;
+    background-color:rgb(239, 238, 236);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 2px gray;
+}
+.deleteModal .form{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    height: fit-content;
+    box-shadow: 0 0 10px 2px black;
+    background-color: antiquewhite;
+    border-radius: 15px;
+    margin: 4.2vh 0;
+}
+/* .deleteModal .form img{
+    display: flex;
+    justify-content: end;
+}  */
+
+
+.deleteModal .form .close{
+    align-self: flex-end;
+    background-color: rgb(255, 157, 0);
+    color: white;
+    font-size: .85rem;
+    padding: 10px;
+    margin: 3px;
+    border: 1px solid white;
+    border-radius: 10px;
+    outline: none;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+
+
+.hidden{
+    display: none;
+}
