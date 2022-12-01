@@ -17,7 +17,8 @@ if ($method=="POST") {
     $food_Name=$rowFood_item['food_Name'];
     $total_price= $rowFood_item["price"]*$quantity;
 
-    $checkDubCartItem="SELECT * FROM `cart` WHERE food_id = $food_Id";
+    // $checkDubCartItem="SELECT * FROM `cart` WHERE food_id = $food_Id";
+    $checkDubCartItem="SELECT * FROM `cart` WHERE food_id = $food_Id AND user_id=$user_id";
     $checkDubCartItemResult=mysqli_query($conn,$checkDubCartItem);
     $row=mysqli_fetch_assoc($checkDubCartItemResult);
     $noOfRows= mysqli_num_rows($checkDubCartItemResult);
@@ -25,7 +26,7 @@ if ($method=="POST") {
     if ($noOfRows>0){
         $quantity = $row["quantity"]+$quantity;
         $updTotal_price=$rowFood_item["price"]*$quantity;
-        $sql="UPDATE `cart` SET `quantity` = '$quantity', `total_price` = '$updTotal_price' WHERE `cart`.`food_id` = $food_Id";
+        $sql="UPDATE `cart` SET `quantity` = '$quantity', `total_price` = '$updTotal_price' WHERE `cart`.`food_id` = $food_Id AND `user_id`=$user_id";
         $result=mysqli_query($conn,$sql);
     } 
     else{

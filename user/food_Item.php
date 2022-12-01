@@ -18,10 +18,7 @@
     ?>
     <div class="foodItemContainer">
         <?php
-        if(!isset($_SESSION['loggedin']) && $_SESSION['loggedin']!='true'){
-            header("Location:/FoodFest/account.php");
-        }
-        else{
+        
 
             $method=$_SERVER['REQUEST_METHOD'];
             if ($method=="POST" ) {
@@ -53,9 +50,16 @@
                                 <form action="partial/_addToCart.php" method="post" >
                                     <input type="hidden" value="'.$srcRow["food_Id"].'" name="food_Id">
                                     <input type="hidden" value="'. $_SERVER['REQUEST_URI'].'" name="currentUrl">
-                                    <input type="hidden" name="user_id" id="" value="'.$_SESSION['user_id'].'">
-                                    <input type="number" name="quantity" id="" value="1">
-                                    <button class="btn" type="submit">Add to cart</button>
+                                    <input type="number" name="quantity" id="" value="1">';
+                                    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']=='true'){
+                                            // header("Location:/FoodFest/account.php");
+                                            echo '<input type="hidden" name="user_id" id="" value="'.$_SESSION['user_id'].'">
+                                            <button class="btn" type="submit">Add to cart</button>';
+                                        }
+                                        else{
+                                            echo '<button class="btnDisable">Add to card</button>';
+                                        }
+                                echo '   
                                 </form> 
                             </div>
                         </div>   
@@ -94,16 +98,23 @@
                                 <form action="partial/_addToCart.php" method="post" >
                                     <input type="hidden" value="'.$row["food_Id"].'" name="food_Id">
                                     <input type="hidden" value="'. $_SERVER['REQUEST_URI'].'" name="currentUrl">
-                                    <input type="hidden" name="user_id" id="" value="'.$_SESSION['user_id'].'">
-                                    <input type="number" name="quantity" id="" value="1">
-                                    <button class="btn" type="submit">Add to cart</button>
+                                    <input type="number" name="quantity" id="" value="1">';
+                                    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']=='true'){
+                                            // header("Location:/FoodFest/account.php");
+                                            echo '<input type="hidden" name="user_id" id="" value="'.$_SESSION['user_id'].'">
+                                            <button class="btn" type="submit">Add to cart</button>';
+                                        }
+                                        else{
+                                            echo '<button class="btnDisable">Add to card</button>';
+                                        }
+                                echo '   
                                 </form> 
                             </div>
-                        </div>
+                        </div>   
                     ';
                 }
             }
-        }
+        
         ?>
     </div>
 

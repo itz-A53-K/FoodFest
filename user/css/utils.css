@@ -35,13 +35,28 @@ font-family: 'Indie Flower', cursive;*/
     cursor: pointer;
     
 } 
-.btn:hover{
+.btn:hover {
     /* color: white;
     background-color: black; */
     box-shadow: 0px 0px 7px 2px gray;
     border: 1px solid rgb(255, 157, 0);
 }
-
+.btnDisable{
+    
+    align-self: flex-end;
+    background-color: rgba(0, 0, 0, 0.18);
+    color: rgb(54, 53, 53);
+    font-size: .85rem;
+    width: fit-content;
+    padding: 10px 50px;
+    margin: 3px 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    outline: none;
+    transition: .2s ease-in;
+    cursor: pointer;
+    
+}
 
 .card{
     display: flex;
