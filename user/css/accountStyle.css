@@ -90,6 +90,10 @@
     left: 46px;
 }
 
+#AdminForm {
+    left: -720px;
+}
+
 form a {
     font-size: 12px;
 }
