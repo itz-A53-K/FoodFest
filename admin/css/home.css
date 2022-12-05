@@ -1,36 +1,121 @@
-.menu h1{
- font-size: 1.5rem;
- text-decoration: underline;
-}
-
-.form{
-    width: 40vw;
-    margin: 1vh 0;
-    padding: 1vh 2vw;
-}
-.form div{
+.taskMenu{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 24vw;
+    background-color: rgb(251, 250, 249);
+    padding: 5vh 10px ;
     display: flex;
     flex-direction: column;
-    margin: 12px;
+    align-items: center;
+}
+.taskMenu h1{
+    display: flex;
+    align-self: start;
+    margin: 5px 15px;
+    font-size: 1.4rem;
+}
+.taskMenu p:nth-child(2){
+    display: flex;
+    align-self: start;
+    margin: 15px;
+    margin-top: 0;
+}
+
+.taskBtnSec{
+    margin: 5px 0;
+    margin-bottom: 4vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
     
 }
-.form div input ,.form div select,.form div textarea, .form div option{
-   font-size: .8rem;
-   margin: 4px 0;
-   padding: 10px 20px;
-   border: none;
-   background-color:  rgb(239, 238, 236);
-   border-bottom: 2px solid goldenrod;
-   border-radius: 4px;
-   outline: none;
-   box-shadow: 0px 0px 9px 2px gray;
-   cursor: pointer;
+.taskBtnSec .taskBtn{
+    padding: 6px 30px;   
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid white;
+    font-size: .8rem;
+    cursor: pointer;
+
 }
-.form div textarea{
-    height: 7vh;
+
+.ClickedTaskBtn {
+    color: white;
+    background-color: rgb(36, 84, 216);
+    transition: .3s ease-in-out;
 }
-.form div label{
-    margin: 0 10px;
+.ClickedTaskBtn:hover{
+    background-color: rgb(36, 84, 216);
+    border: 1px solid rgb(68, 127, 209);
 }
 
 
+.taskCard{
+    width: 18vw;
+    margin: 4vh 20px;
+    padding: 10px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 2px gray;
+}
+.taskCard .price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.orderedItem{
+    width: 58vw;
+    background-color: rgb(242, 245, 246);
+    padding: 5vh 10px;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.orderedItem h2{
+    display: flex;
+    align-self: start;
+    margin: 25px;
+    font-size: 1.1rem;
+}
+.table{
+    border-radius: 10px;
+    background-color: rgba(237, 234, 242, 0.321);
+    margin: 20px 2vw;
+    padding: 15px;
+    box-shadow: 0 0 10px -5px gray;
+}
+
+.table .row{
+    min-height: 5vh;
+    width: 50vw;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.606);
+}
+.table .row div{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    
+}
+.table .row div:nth-child(2){
+    width: 18vw;
+}
+
+.table .itemImg{
+        border-radius: 25px;
+        width: 80px;
+        height: 80px;
+}
+.table .grandTotal{
+    display: flex;
+    justify-content: end;
+    margin-top: 25px;
+    font-size: 1.4rem;
+}

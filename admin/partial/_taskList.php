@@ -1,82 +1,102 @@
 <?php
     include '_dbConnect.php';
-if (isset($_GET['btn'])) {
-    $btn=$_GET['btn'];
-    // $url=$_GET['url'];
+    if (isset($_GET['btn'])) {
+        $btn=$_GET['btn'];
+        // $url=$_SERVER["REQUEST_URI"];
 
 
-    
-    if($btn=="delivered"){
-        $orders= "SELECT * FROM `cart` WHERE status='delivered'";
-        $result=mysqli_query($conn,$orders);
+        
+        if($btn=="delivered"){
+            $orders= "SELECT * FROM `orders` WHERE order_status='delivered' ORDER BY `order_id` DESC";
+            $result=mysqli_query($conn,$orders);
+
+            while($row=mysqli_fetch_assoc($result))
+            {
+                echo '
+                    <a href="?taskId='.$row["order_id"].'">
+                        <div class="taskCard">
+                            <div class="taskDetails">
+                                <p>Task #'.$row["order_id"].'</p>
+                                <span>'.$row["order_time"].'</span>
+                            </div>
+                            <div class="price">
+                                <h2>₹'.$row["total_price"].'</h2>
+                                <p> '.$row["order_status"].'</p>
+                            </div>
+                        </div>
+                    </a>
+                ';
+                
+            }
+            if(mysqli_num_rows($result) == 0){
+                echo '
+                        <h2>No Task Available !
+                    
+                ';
+            }
+        }
+        else if($btn=="preparing"){
+            $orders= "SELECT * FROM `orders` WHERE order_status='preparing' ORDER BY `order_id` DESC";
+            $result=mysqli_query($conn,$orders);
+
+            while($row=mysqli_fetch_assoc($result))
+            {
+                echo '
+                <a href="?taskId='.$row["order_id"].'">
+                    <div class="taskCard">
+                        <div class="taskDetails">
+                            <p>Task #'.$row["order_id"].'</p>
+                            <span>'.$row["order_time"].'</span>
+                        </div>
+                        <div class="price">
+                            <h2>₹'.$row['total_price'].'</h2>
+                            <p> '.$row["order_status"].'</p>
+                        </div>
+                    </div>
+                </a>
+                ';
+                // exit();
+                // header("Location:$url");
+            }
+            if(mysqli_num_rows($result) == 0){
+                echo '
+                        <h2>No Task Available !
+                    
+                ';
+            }
+        }
+    }
+    else{
+        $orders= "SELECT * FROM `orders` WHERE order_status='new' ORDER BY `order_id` DESC";
+            $result=mysqli_query($conn,$orders);
 
         while($row=mysqli_fetch_assoc($result))
         {
             echo '
-                <a href="bla">
-                    <div class="taskCard">
-                        <div class="taskDetails">
-                            <p>Task Name</p>
-                            <span>Order Time</span>
-                        </div>
-                        <div class="price">
-                            <h2>₹'.$row['total_price'].'</h2>
-                        </div>
-                    </div>
-                </a>
-            ';
-            exit();
-            // header("Location:$url");
-        }
-    }
-    else if($btn=="preparing"){
-        $orders= "SELECT * FROM `cart` WHERE status='preparing'";
-        $result=mysqli_query($conn,$orders);
-
-        while($row=mysqli_fetch_assoc($result))
-        {
-            echo '
-                <a href="bla">
-                    <div class="taskCard">
-                        <div class="taskDetails">
-                            <p>Task Name</p>
-                            <span>Order Time</span>
-                        </div>
-                        <div class="price">
-                            <h2>₹'.$row['total_price'].'</h2>
-                        </div>
-                    </div>
-                </a>
-            ';
-            exit();
-            // header("Location:$url");
-        }
-    }
-}
-else{
-    $orders= "SELECT * FROM `cart` WHERE status='new'";
-    $result=mysqli_query($conn,$orders);
-
-    while($row=mysqli_fetch_assoc($result))
-    {
-        echo '
-            <a href="bla">
-                <div class="taskCard">
-                    <div class="taskDetails">
-                        <p>Task Name</p>
-                        <span>Order Time</span>
-                    </div>
-                    <div class="price">
-                        <h2>₹'.$row['total_price'].'</h2>
-                    </div>
+            <a href="?taskId='.$row["order_id"].'">
+            <div class="taskCard">
+                <div class="taskDetails">
+                    <p>Task #'.$row["order_id"].'</p>
+                    <span>'.$row["order_time"].'</span>
                 </div>
-            </a>
-        ';
-        exit();
-        // header("Location:$url");
+                <div class="price">
+                    <h2>₹'.$row['grand_total'].'</h2>
+                    <p> '.$row["order_status"].'</p>
+                </div>
+            </div>
+        </a>
+            ';
+            // exit();
+            // header("Location:$url");
+        }
+        if(mysqli_num_rows($result) == 0){
+            echo '
+                    <h2>No Task Available !
+                
+            ';
+        }
+        
     }
-    
-}
 
 
 ?>

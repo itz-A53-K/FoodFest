@@ -6,70 +6,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Fest Admin Panel</title>
-    <link rel="stylesheet" href="css/utils.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/addItem.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/modifyItem.css">
 </head>
 
-<body id="body">
+<body class="body" id="body">
     <div class="body2">
         <?php
         include 'partial/_dbConnect.php';
         include 'partial/_Ad_Header.php';
         ?>
 
-        <section class="menu">
+        <section class="taskMenu">
+            <?php
+            echo '
+            <h1>Task List</h1>
+            <p>Date :&nbsp;'.date("M j , Y").' </p>
+            <div class="taskBtnSec">
+                <input type="hidden" name="currentUrl" value="cur">
+                <a href="/FoodFest/admin/home.php"><button type="submit" id="newBtn" class="taskBtn ClickedTaskBtn">New</button></a>
+                <a  href="?btn=preparing"><button type="submit" id="preparing" class="taskBtn">Preparing</button></a>
+                <a href="?btn=delivered"><button type="submit" id="delivered" class="taskBtn">Delivered</button></a>
+            </div>';
+            ?>
+            <hr>
+            <div class="taskList">
+                <?php
+                include 'partial/_taskList.php';
+                ?>
+            </div>
+        </section>
+        <section class="orderedItem">
+            <h2>Task Info</h2>
+            <div class="orderedItemList">
+                <div class="table">
+                    <?php
+                        if (isset($_GET['taskId'])) {
+                            $taskId=$_GET['taskId'];
 
-            <h1>Add new food item</h1>
+                            $order_list="SELECT * FROM `ordered_list` WHERE order_id=$taskId";
+                            $result=mysqli_query($conn,$order_list);
+                            $sno=0;
+                            $grand_total=0;
 
-            <form action="partial/_addItemFunctional.php" method="post" enctype="multipart/form-data" class="form">
-                <div>
-                    <label for="food_name">Item Name :</label>
-                    <input type="text" name="food_name" id="food_name" required>
-                </div>
-                <div>
-                    <label for="food_desc">Item Description :</label>
-                    <textarea name="food_desc" id="food-desc" cols="30" rows="10"></textarea>
-                </div>
-                <div>
-                    <label for="price">Item Price :</label>
-                    <input type="number" name="price" id="price" required>
-                </div>
-                <div>
-                    <label for="item_Available">Is Item Available?</label>
-                    <select name="item_Available" id="item_Available" required>
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                            while($row = mysqli_fetch_assoc($result)){
+                                $food_id=$row["food_id"];
+                                $item="SELECT * FROM `food_items` WHERE food_Id=$food_id";
+                                $itemResult=mysqli_query($conn,$item);
+                                if ($itemRow=mysqli_fetch_assoc($itemResult)) {
+                                    $grand_total+=$row["total_price"];
+                                    $sno= $sno+1;
+                                    // <div>' . $sno. '.</div>
+                                    echo '
+                                        <div class="row">
+                                            <div>
+                                                <img src="../img/'.$itemRow["food_Item_img_path"].'" alt="" srcset="" class="itemImg">
+                                                    
+                                            </div>
 
-                    </select>
-                </div>
-                <div>
-                    <label for="category_Id">Choose Food Category :</label>
-                    <select name="category_Id" id="category_Id" required>
-                        <option value="select_category">--Select Category--</option>
+                                            <div>
+                                                <h4 class="foodName">'.$itemRow["food_Name"].'</h4>
+                                                    
+                                            </div>
 
-                        <?php
-                        $showCategory="SELECT * FROM `food_categories`";
-                        $showCategoryResult=mysqli_query($conn,$showCategory);
-                        while($row=mysqli_fetch_assoc($showCategoryResult)){
+                                            <div>x'.$row["quantity"].' </div>
+
+                                            <div>₹'.$row["total_price"].' </div>
+                                            
+                                        </div>
+                                        ';
+                                }
+                            }
                             echo '
-                            <option value="'.$row["category_id"].'">'.$row["category_name"].'</option>';
+                            <h1 class="grandTotal">₹'.$grand_total.'</h1>';
                         }
-                            ?>
-                    </select>
+                        else{
+                            echo '<h2>No task selected.</h2>';
+                        }
+                    ?>
                 </div>
-
-                <div>
-                    <label for="food_img">Item Image :</label>
-                    <input type="file" name="food_img" id="food_img" required>
-                </div>
-                <div>
-                    <button type="submit">Add Item</button>
-                </div>
-            </form>
-
-            <!-- <a href="#body" class="goToTop" id="goToTop"><button >Go To Top</button></a> -->
+            </div>
         </section>
     </div>
+    <script src="js/home.js"></script>
     <script src="/FoodFest/script.js"></script>
 </body>
 

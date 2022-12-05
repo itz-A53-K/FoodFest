@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Fest Admin Panel</title>
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/addItem.css">
     <link rel="stylesheet" href="css/utils.css">
     <link rel="stylesheet" href="css/deleteItem.css">
 </head>
