@@ -32,7 +32,7 @@ session_start();
 
                         <h2>Hi&nbsp; <em>'.$_SESSION['userName'].'</em></h2>
                         
-                             <button class="headerBtn logoutBtn">Logout</button>
+                        <button class="headerBtn logoutBtn">Logout</button>
                         
                     </ul>
 

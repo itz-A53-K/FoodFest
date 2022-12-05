@@ -51,7 +51,7 @@ if ($method =='POST') {
         
     }
     else{
-    echo '<1';
+    echo '!=1';
     }
 }
 

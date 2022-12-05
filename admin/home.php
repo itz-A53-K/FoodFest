@@ -17,81 +17,85 @@
         <?php
         include 'partial/_dbConnect.php';
         include 'partial/_Ad_Header.php';
-        ?>
 
-        <section class="taskMenu">
-            <?php
+        if(!isset($_SESSION['adminLoggedin']) && $_SESSION['adminLoggedin']!='true'){
+            header("Location:/FoodFest/account.php");
+        }
+        else{
             echo '
-            <h1>Task List</h1>
-            <p>Date :&nbsp;'.date("M j , Y").' </p>
-            <div class="taskBtnSec">
-                <input type="hidden" name="currentUrl" value="cur">
-                <a href="/FoodFest/admin/home.php"><button type="submit" id="newBtn" class="taskBtn ClickedTaskBtn">New</button></a>
-                <a  href="?btn=preparing"><button type="submit" id="preparing" class="taskBtn">Preparing</button></a>
-                <a href="?btn=delivered"><button type="submit" id="delivered" class="taskBtn">Delivered</button></a>
-            </div>';
-            ?>
-            <hr>
-            <div class="taskList">
-                <?php
-                include 'partial/_taskList.php';
-                ?>
-            </div>
-        </section>
-        <section class="orderedItem">
-            <h2>Task Info</h2>
-            <div class="orderedItemList">
-                <div class="table">
-                    <?php
-                        if (isset($_GET['taskId'])) {
-                            $taskId=$_GET['taskId'];
+                <section class="taskMenu">
+                    <h1>Task List</h1>
+                    <p>Date :&nbsp;'.date("M j , Y").' </p>
+                    <div class="taskBtnSec">
+                        <input type="hidden" name="currentUrl" value="cur">
+                        <a href="/FoodFest/admin/home.php"><button type="submit" id="newBtn" class="taskBtn ClickedTaskBtn">New</button></a>
+                        <a  href="?btn=preparing"><button type="submit" id="preparing" class="taskBtn">Preparing</button></a>
+                        <a href="?btn=delivered"><button type="submit" id="delivered" class="taskBtn">Delivered</button></a>
+                    </div>
+                    <hr>
+                    <div class="taskList">';
+                        include 'partial/_taskList.php';
+            echo '
+                    </div>
+                </section>
 
-                            $order_list="SELECT * FROM `ordered_list` WHERE order_id=$taskId";
-                            $result=mysqli_query($conn,$order_list);
-                            $sno=0;
-                            $grand_total=0;
+                <section class="orderedItem">
+                    <h2>Task Info</h2>
+                    <div class="orderedItemList">
+                        <div class="table">';
+                                if (isset($_GET['taskId'])) {
+                                    $taskId=$_GET['taskId'];
 
-                            while($row = mysqli_fetch_assoc($result)){
-                                $food_id=$row["food_id"];
-                                $item="SELECT * FROM `food_items` WHERE food_Id=$food_id";
-                                $itemResult=mysqli_query($conn,$item);
-                                if ($itemRow=mysqli_fetch_assoc($itemResult)) {
-                                    $grand_total+=$row["total_price"];
-                                    $sno= $sno+1;
-                                    // <div>' . $sno. '.</div>
+                                    $order_list="SELECT * FROM `ordered_list` WHERE order_id=$taskId";
+                                    $result=mysqli_query($conn,$order_list);
+                                    $sno=0;
+                                    $grand_total=0;
+
+                                    while($row = mysqli_fetch_assoc($result)){
+                                        $food_id=$row["food_id"];
+                                        $item="SELECT * FROM `food_items` WHERE food_Id=$food_id";
+                                        $itemResult=mysqli_query($conn,$item);
+                                        if ($itemRow=mysqli_fetch_assoc($itemResult)) {
+                                            $grand_total+=$row["total_price"];
+                                            $sno= $sno+1;
+                                            // <div>' . $sno. '.</div>
+                                            echo '
+                                                <div class="row">
+                                                    <div>
+                                                        <img src="../img/'.$itemRow["food_Item_img_path"].'" alt="" srcset="" class="itemImg">
+                                                            
+                                                    </div>
+
+                                                    <div>
+                                                        <h4 class="foodName">'.$itemRow["food_Name"].'</h4>
+                                                            
+                                                    </div>
+
+                                                    <div>x'.$row["quantity"].' </div>
+
+                                                    <div>₹'.$row["total_price"].' </div>
+                                                    
+                                                </div>
+                                                ';
+                                        }
+                                    }
                                     echo '
-                                        <div class="row">
-                                            <div>
-                                                <img src="../img/'.$itemRow["food_Item_img_path"].'" alt="" srcset="" class="itemImg">
-                                                    
-                                            </div>
-
-                                            <div>
-                                                <h4 class="foodName">'.$itemRow["food_Name"].'</h4>
-                                                    
-                                            </div>
-
-                                            <div>x'.$row["quantity"].' </div>
-
-                                            <div>₹'.$row["total_price"].' </div>
-                                            
-                                        </div>
-                                        ';
+                                    <h1 class="grandTotal">₹'.$grand_total.'</h1>';
                                 }
-                            }
-                            echo '
-                            <h1 class="grandTotal">₹'.$grand_total.'</h1>';
-                        }
-                        else{
-                            echo '<h2>No task selected.</h2>';
-                        }
-                    ?>
-                </div>
-            </div>
-        </section>
+                                else{
+                                    echo '<h2>No task selected.</h2>';
+                                }
+                            echo '      
+                        </div>
+                    </div>
+                </section>
+            ';
+        }
+    ?>
     </div>
     <script src="js/home.js"></script>
     <script src="/FoodFest/script.js"></script>
+    <script src="js/adminLogout.js"></script>
 </body>
 
 </html>

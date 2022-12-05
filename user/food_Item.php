@@ -50,15 +50,25 @@
                                 <form action="partial/_addToCart.php" method="post" >
                                     <input type="hidden" value="'.$srcRow["food_Id"].'" name="food_Id">
                                     <input type="hidden" value="'. $_SERVER['REQUEST_URI'].'" name="currentUrl">
-                                    <input type="number" name="quantity" id="" value="1">';
-                                    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']=='true'){
-                                            // header("Location:/FoodFest/account.php");
-                                            echo '<input type="hidden" name="user_id" id="" value="'.$_SESSION['user_id'].'">
-                                            <button class="btn" type="submit">Add to cart</button>';
+                                    ';
+                                    if((isset($_SESSION['loggedin']) && $_SESSION['loggedin']=='true')){
+                                        
+                                        if (($srcRow['item_Available']=="No")) {
+                                            echo '<p style="color:red; font-size:.9rem">Out of stock.</p>
+                                            <h1 class="btnDisable">Add to card</h1>'; 
                                         }
                                         else{
-                                            echo '<button class="btnDisable">Add to card</button>';
+                                            echo '<input type="hidden" name="user_id" id="" value="'.$_SESSION['user_id'].'">
+                                            <input type="number" name="quantity" id="" value="1">
+                                            <button class="btn" type="submit">Add to cart</button>';
                                         }
+                                    }
+                                    else{
+                                        if ($srcRow['item_Available']=="No") {
+                                            echo '<p style="color:red; font-size:.9rem">Out of stock.</p>'; 
+                                         }
+                                        echo '<h1 class="btnDisable">Add to card</h1>';
+                                    }
                                 echo '   
                                 </form> 
                             </div>
@@ -98,15 +108,25 @@
                                 <form action="partial/_addToCart.php" method="post" >
                                     <input type="hidden" value="'.$row["food_Id"].'" name="food_Id">
                                     <input type="hidden" value="'. $_SERVER['REQUEST_URI'].'" name="currentUrl">
-                                    <input type="number" name="quantity" id="" value="1">';
+                                    ';
                                     if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']=='true'){
-                                            // header("Location:/FoodFest/account.php");
-                                            echo '<input type="hidden" name="user_id" id="" value="'.$_SESSION['user_id'].'">
-                                            <button class="btn" type="submit">Add to cart</button>';
+                                        
+                                        if ($row['item_Available']=="No") {
+                                            echo '<p style="color:red; font-size:.9rem">Out of stock.</p>
+                                            <h1 class="btnDisable">Add to card</h1>'; 
                                         }
                                         else{
-                                            echo '<button class="btnDisable">Add to card</button>';
+                                            echo '<input type="hidden" name="user_id" id="" value="'.$_SESSION['user_id'].'">
+                                            <input type="number" name="quantity" id="" value="1">
+                                            <button class="btn" type="submit">Add to cart</button>';
                                         }
+                                    }
+                                    else{
+                                        if ($row['item_Available']=="No") {
+                                            echo '<p style="color:red; font-size:.9rem">Out of stock.</p>'; 
+                                         }
+                                        echo '<h1 class="btnDisable">Add to card</h1>';
+                                    }
                                 echo '   
                                 </form> 
                             </div>

@@ -1,4 +1,10 @@
+<?php
+session_start();
+?>
 <header class="navbar">
+    <?php
+        echo '
+            <h1>Hi <span>'.$_SESSION["adminUserName"].'</span></h1>
             <h2 id="adminPanel">Admin Panel</h2>
             <ul>
                 <li class="listItem">
@@ -17,10 +23,10 @@
                     <a href="#" class="itemLink">Profit</a>
                 </li>
                 <li class="listItem">
-                    <button type="submit" name="logout" id="logout">Logout</button>
+                    <button class="logoutBtn">Logout</button>
                 </li>
             </ul>
-
-            
-
-        </header>
+        ';
+                
+    ?>
+</header>

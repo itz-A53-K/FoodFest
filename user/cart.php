@@ -16,135 +16,131 @@
     <?php
     include 'partial/_dbConnect.php';
     include 'partial/_header.php';
-    ?>
-    <?php
+    
         if(!isset($_SESSION['loggedin']) && $_SESSION['loggedin']!='true'){
             header("Location:/FoodFest/account.php");
         }
         else{
-            $user_id= $_SESSION['user_id'];
-            
-            $sql = "SELECT * FROM `cart` WHERE user_id=$user_id";
-            $result = mysqli_query($conn, $sql);
-            $no_ofRows= mysqli_num_rows($result);
-            
-            $discount=0;
-            $toPay=0;
-            $sno = 0;
-            $cartItem=false;
             echo '
-            <section class="cartContainer">
-                <h1>Your Cart</h1>
-                <div class="container">
-
-                    <table class="table">
-                        <h3>Items</h3>
-                        <thead>
-                            <tr>
-                                <th>S. No</th>
-                                <th>Food Items</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-
-                            </tr>
-                        </thead>
-
-                        <tbody>';
-                            
-                                while($row = mysqli_fetch_assoc($result)){
-                                $cartItem=true; 
-                                
-                                $sno= $sno+1;
-                                $toPay=$row["total_price"]+$toPay;
-                                echo '
-                                    <tr>
-                                        <th>' . $sno. '.</th>
-
-                                        <td>
-                                            <h4 class="foodName">'.$row["food_Name"].'</h4>
-                                                
-                                        </td>
-
-                                        <td>' . $row["quantity"] .' </td>
-
-                                        <td>' . $row["total_price"] .' </td>
-                                        
-                                            
-                                    </tr>';
-                                }
-
-                            echo '
-                        </tbody>
-                    </table>
-                </div>';
-
-                if($cartItem){
-                    if ($toPay >=1000 && $toPay<1500) {
-                        $discount= floor((2/100)*$toPay);
-                    }
-                    else if ($toPay >=1500 && $toPay<2000) {
-                        $discount= floor((4/100)*$toPay);
-                    }
-                    else if ($toPay >=2000) {
-                        $discount= floor((8/100)*$toPay);
-                    }
-                    $tax=50;
+            <section class="cartContainer">';
+                $user_id= $_SESSION['user_id'];
+                
+                $sql = "SELECT * FROM `cart` WHERE user_id=$user_id";
+                $result = mysqli_query($conn, $sql);
+                $no_ofRows= mysqli_num_rows($result);
+                if($no_ofRows>0){
+                    $discount=0;
+                    $itemTotal=0;
+                    $sno = 0;
                     echo '
-                        <div class="container">
-                            <h2>Bill Details</h2>
-                        
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
+                        <h1>Your Cart</h1>
 
-                                <tbody>
+                        <div class="table">';
+                            while($row = mysqli_fetch_assoc($result)){
+                                $food_id=$row["food_id"];
+                                $foodName ="SELECT * FROM `food_items` WHERE food_Id=$food_id";
+                                $foodName_result = mysqli_query($conn,$foodName);
+                                $foodName_row = mysqli_fetch_assoc($foodName_result);
+
+                                $sno= $sno+1;
+                                $itemTotal=$row["total_price"]+$itemTotal;
+                                // <div>
+                                //     <img src="../img/'.$row["food_Item_img_path"].'" alt="" srcset="" class="itemImg">      
+                                // </div>
+
+                                echo '
+                                    <div class="row cartItems">
+
+                                        <div class="cartItem_Left">
+                                            <h4 class="foodName">'.$foodName_row["food_Name"].'</h4>
+                                                
+                                        </div>
+                                        <div class="cartItem_Right">
+                                            <div>x'.$row["quantity"].' </div>
+
+                                            <div>₹'.$row["total_price"].' </div>
+                                        </div>
+                                    </div>';   
+                            }
+
                                     
-                                    <tr>
-                                        <th>Total No Of Items</th>
-                                        <td>'.$no_ofRows.'</td>
-                    
-                                    </tr>
-                                    <tr>
-                                        <th>Items Total</th>
-                                        <td>₹'.$toPay.'</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Taxes and Charges</th>
-                                        <td>₹'.$tax.'</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Discounts</th>
-                                        <td>-₹'.$discount.'</td>
-                                    </tr>
+                            if ($itemTotal >=500 && $itemTotal<1000) {
+                            
+                            $discount= floor((4/100)*$itemTotal);
+                            }
+                            else if ($itemTotal >=1000 && $itemTotal<1500) {
+                                $discount= floor((6/100)*$itemTotal);
+                            }
+                            else if ($itemTotal >=1500) {
+                                $discount= floor((8/100)*$itemTotal);
+                            }
+                            $tax=23;
+                            echo '
+                            <div class="billDetails">
+                                <h2>Bill Details</h2>
+                                    <div class="row">
 
-                                </tbody>
-                            </table>
+                                        <div>
+                                            <h4>No. Of Items</h4> 
+                                        </div>
 
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <p>..........................................................</p>
-                                    <tr>
-                                        <th>To Pay</th>
-                                        <td>₹'.$toPay+$tax-$discount.'</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                        <p>'.$no_ofRows.' </p>
+                                    
+                                    </div>
+                                    <div class="row">
+
+                                        <div>
+                                            <h4>Items Total</h4> 
+                                        </div>
+
+                                        <p>₹'.$itemTotal.' </p>
+                                    
+                                    </div>
+                                    <div class="row">
+
+                                        <div>
+                                            <h4>Taxes and Charges</h4> 
+                                        </div>
+
+                                        <p>';
+                                        if($no_ofRows>3){
+                                            $tax*=$no_ofRows;
+                                            echo '<del>&nbsp;₹&nbsp;'.$tax.'&nbsp;</del>&nbsp;&nbsp; FREE';
+                                            $tax=0;
+                                        }
+                                        else{
+                                            $tax*=$no_ofRows;
+                                            echo '₹'.$tax;
+                                        }
+                                        echo ' </p>
+                                    
+                                    </div>
+                                    <div class="row">
+
+                                        <div>
+                                            <h4>Discounts</h4> 
+                                        </div>
+
+                                        <p>-₹'.$discount.' </p>
+                                    
+                                    </div>
+                                    <hr>
+                                    <div class="row grandTotal">
+
+                                        <div>To Pay</div> 
+                                        <div>₹'.$itemTotal+$tax-$discount.' </div>
+                                    
+                                    </div>';
+                            echo '
+                            </div>
                         </div>';
+                    
+                        
                 }
                 else{
                     echo ' <h1>No Cart item yet . Add some items first.</h1>';
                 }
-            echo '
+        echo '
             </section>';
         }
     ?>

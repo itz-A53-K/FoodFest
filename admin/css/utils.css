@@ -50,8 +50,17 @@ body{
     align-items: center;
 }
 
+.navbar h1{
+    margin: 4vh 0;
+    font-size: 1.05rem;
+    color: orange;
+}
+.navbar h1 span{
+    font-size: 1.15rem;
+    color: rgb(24, 172, 192);
+}
 .navbar h2{
-    margin: 8vh 0;
+    margin-bottom: 8vh ;
     font-size: 1.25rem;
     color: rgb(192, 24, 119);
 }
@@ -77,6 +86,21 @@ body{
 }
 .listItem a:hover{
     color: rgba(223, 134, 17, 0.857);
+}
+.navbar .logoutBtn{
+    font-size: 1rem;
+    background-color: violet;
+    padding: 7px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+.navbar .logoutBtn:hover{
+    background-color: rgba(225, 83, 199, 0.87);
+    /* background-color: violet; */
+    border-radius: 10px;
+    border: 1px solid rgb(167, 102, 184);
 }
 
 

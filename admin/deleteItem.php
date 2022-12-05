@@ -14,21 +14,24 @@
 <body class="body" id="body">
     <div class="body2">
         <?php
-        include 'partial/_dbConnect.php';
-        include 'partial/_Ad_Header.php';
-        $currentUrl= $_SERVER["REQUEST_URI"];
-        ?>
+            include 'partial/_dbConnect.php';
+            include 'partial/_Ad_Header.php';
+            $currentUrl= $_SERVER["REQUEST_URI"];
+            
+            if(!isset($_SESSION['adminLoggedin']) && $_SESSION['adminLoggedin']!='true'){
+                header("Location:/FoodFest/account.php");
+            }
+            else{
+                echo '
 
-        <section class="menu">
-            <form class="searchForm form" method="post" action="<?php echo $currentUrl;?>">
-                <div>
-                    <input type="search" name="query_adp" placeholder="Serch food item here">
-                </div>
-            </form>
-            <div class="foodItemList">
+            <section class="menu">
+                <form class="searchForm form" method="post" action="'. $currentUrl.'">
+                    <div>
+                        <input type="search" name="query_adp" placeholder="Serch food item here">
+                    </div>
+                </form>
+                <div class="foodItemList">';
 
-
-                <?php
                     $method=$_SERVER['REQUEST_METHOD'];
                     if ($method=="POST" ) {
 
@@ -99,34 +102,36 @@
                             ';
                         }
                     }
-                ?>
+                    echo '
 
+                </div>
 
-            </div>
+                <div class="deleteModal hidden" id="deleteModal">
+                    <form action="partial/_deleteItemFunctional.php" method="post" enctype="multipart/form-data"
+                        class="form">
+                        <span class="close" id="dltCancelBtn">&times;</span>
+                        <div>
+                            <input type="hidden" name="dltItem_Id" id="dltItem_Id">
+                            <h2>Do you really want to delete the item "<em name="dltFoodName" id="dltFoodName"></em>"
+                            </h2>
+                        </div>
 
-            <div class="deleteModal hidden" id="deleteModal">
-                <form action="partial/_deleteItemFunctional.php" method="post" enctype="multipart/form-data"
-                    class="form">
-                    <span class="close" id="dltCancelBtn">&times;</span>
-                    <div>
-                        <input type="hidden" name="dltItem_Id" id="dltItem_Id">
-                        <h2>Do you really want to delete the item "<em name="dltFoodName" id="dltFoodName"></em>"
-                        </h2>
-                    </div>
+                        <input type="hidden" name="editFood_Id" id="editFood_Id" value="">
+                        <button type="submit">Delete Item</button>
 
-                    <input type="hidden" name="editFood_Id" id="editFood_Id" value="">
-                    <button type="submit">Delete Item</button>
+                    </form>
 
-                </form>
+                </div>
 
-            </div>
+                <a href="#body" class="goToTop" id="goToTop"><button>Go To Top</button></a>
 
-            <a href="#body" class="goToTop" id="goToTop"><button>Go To Top</button></a>
-
-        </section>
+            </section>';
+            }
+        ?>
     </div>
     <script src="js/deleteItem.js"></script>
     <script src="/FoodFest/script.js"></script>
+    <script src="js/adminLogout.js"></script>
 </body>
 
 </html>

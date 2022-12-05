@@ -26,9 +26,9 @@
             </div>
             <div class="navContainerRight">
                 <ul>
-                    <li class="listItem"><a  class="itemLink" href="/FoodFest/index.php">Home</a></li>
-                    <li class="listItem"><a class="itemLink"  href="#">About</a></li>
-                    <li class="listItem"><a  class="itemLink" href="/FoodFest/user/cart.php">Cart</a></li>
+                    <li class="listItem"><a class="itemLink" href="/FoodFest/index.php">Home</a></li>
+                    <li class="listItem"><a class="itemLink" href="#">About</a></li>
+                    <li class="listItem"><a class="itemLink" href="/FoodFest/user/cart.php">Cart</a></li>
                 </ul>
             </div>
         </nav>
@@ -81,7 +81,8 @@
                                 <!-- <h4>Signup</h4> -->
                                 <div>
                                     <!-- <label for="userName">User Name :</label> -->
-                                    <input type="text" id="userName" name="userName" placeholder="User Name" maxlength="10">
+                                    <input type="text" id="userName" name="userName" placeholder="User Name"
+                                        maxlength="10">
                                 </div>
                                 <div>
                                     <!-- <label for="userEmail">Email :</label> -->
@@ -110,26 +111,24 @@
                             </form>
                         </div>
 
-                        <form action="" method="" class="form" id="AdminForm"
-                                onsubmit="">
-                                <!-- <h4>Login</h4> -->
-                                <div class="login">
-                                    <!-- <label for="loginUserEmail">Email :</label> -->
-                                    <input type="email" id="adminEmail" placeholder="Email" name="adminEmail"
-                                        required>
-                                </div>
-                                <div class="login">
-                                    <!-- <label for="loginPassword">Password :</label> -->
-                                    <input type="password" id="loginPassword" placeholder="Password"
-                                        name="loginPassword" required>
-                                </div>
-                            
-                                <button type="submit" class="btnLarge">Login</button>
-                            </form>
-                        </div>
+                        <form action="admin/partial/_adminLoginFunctional.php" method="post" class="form" id="AdminForm" onsubmit="">
+                            <!-- <h4>Login</h4> -->
+                            <div class="login">
+                                <!-- <label for="loginUserEmail">Email :</label> -->
+                                <input type="email" id="adminEmail" placeholder="Email" name="adminEmail" required>
+                            </div>
+                            <div class="login">
+                                <!-- <label for="loginPassword">Password :</label> -->
+                                <input type="password" id="adminLoginPassword" placeholder="Password" name="adminLoginPassword"
+                                    required>
+                            </div>
+
+                            <button type="submit" class="btnLarge">Login</button>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
