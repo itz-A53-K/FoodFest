@@ -44,6 +44,7 @@
                         <div class="form-btn">
                             <span onclick="login()">Login</span>
                             <span onclick="register()">Register</span>
+                            <span onclick="admin()">Admin</span>
                             <hr id="Indicator">
                         </div>
 
@@ -106,6 +107,24 @@
                                 </div>
                                 <button type="submit" class="btnLarge">Signup</button>
                                 <!-- <button type="reset" class="btn">Reset</button> -->
+                            </form>
+                        </div>
+
+                        <form action="" method="" class="form" id="AdminForm"
+                                onsubmit="">
+                                <!-- <h4>Login</h4> -->
+                                <div class="login">
+                                    <!-- <label for="loginUserEmail">Email :</label> -->
+                                    <input type="email" id="adminEmail" placeholder="Email" name="adminEmail"
+                                        required>
+                                </div>
+                                <div class="login">
+                                    <!-- <label for="loginPassword">Password :</label> -->
+                                    <input type="password" id="loginPassword" placeholder="Password"
+                                        name="loginPassword" required>
+                                </div>
+                            
+                                <button type="submit" class="btnLarge">Login</button>
                             </form>
                         </div>
                     </div>
