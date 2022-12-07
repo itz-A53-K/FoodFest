@@ -114,6 +114,9 @@
     <script src="js/home.js"></script>
     <script src="/FoodFest/script.js"></script>
     <script src="js/adminLogout.js"></script>
+    <script>
+        setTimeout("location.reload(true);", 10000);
+    </script>
 </body>
 
 </html>
