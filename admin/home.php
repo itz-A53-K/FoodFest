@@ -88,7 +88,7 @@
                                     <h1 class="grandTotal">To Pay : ₹'.$row['grand_total'].'</h1>';
                                 }
                                 else{
-                                    echo '<h2>No task selected.</h2>';
+                                    echo '<h2>Click on a task to view .</h2>';
                                 }
                                 if($row){
                                     if($row['order_status']=="new"){
