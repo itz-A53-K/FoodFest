@@ -1,12 +1,13 @@
 .deleteModal{
-    width: 82vw;
-    height: 99vh;
+    width: 82.5vw;
+    height: 93vh;
     background-color:rgb(239, 238, 236);
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 0px;
+    top: 3.5vh;
+    left: 15vw;
     border-radius: 15px;
     box-shadow: 0 0 10px 2px gray;
 }

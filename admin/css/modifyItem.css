@@ -1,21 +1,25 @@
 .modifyFormModal{
-    width: 82vw;
+    width: 82.5vw;
+    height: 93vh;
     background-color:rgb(239, 238, 236);
     position: fixed;
     display: flex;
     justify-content: center;
-    top: 0px;
+    top: 3.5vh;
+    left: 15vw;
     border-radius: 15px;
     box-shadow: 0 0 10px 2px gray;
+    overflow-y: scroll;
 }
 .modifyFormModal .form{
     display: flex;
     flex-direction: column;
     width: 40vw;
+    height: fit-content;
     box-shadow: 0 0 10px 2px black;
     background-color: antiquewhite;
     border-radius: 15px;
-    margin: 4.2vh 0;
+    margin: 7vh 0;
     
 }
 
@@ -26,7 +30,7 @@
     color: white;
     font-size: .85rem;
     padding: 10px;
-    margin: 3px;
+    margin: 5px;
     border: 1px solid white;
     border-radius: 10px;
     outline: none;
