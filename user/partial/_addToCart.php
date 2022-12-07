@@ -22,17 +22,19 @@ if ($method=="POST") {
     $checkDubCartItemResult=mysqli_query($conn,$checkDubCartItem);
     $row=mysqli_fetch_assoc($checkDubCartItemResult);
     $noOfRows= mysqli_num_rows($checkDubCartItemResult);
+
     if ($rowFood_item['item_Available']=="Yes") {
       
         if ($noOfRows>0 ){
             $quantity = $row["quantity"]+$quantity;
             $updTotal_price=$rowFood_item["price"]*$quantity;
+
             $sql="UPDATE `cart` SET `quantity` = '$quantity', `total_price` = '$updTotal_price' WHERE `cart`.`food_id` = $food_Id AND `user_id`=$user_id";
             $result=mysqli_query($conn,$sql);
         } 
         else{
-            $sql="INSERT INTO `cart` (`food_id`, `quantity`, `user_id`, `total_price`) VALUES ('$food_Id','$food_Name', '$quantity', '$user_id', '$total_price')";
-            $result=mysqli_query($conn,$sql);
+            $sql_ins="INSERT INTO `cart` (`food_id`, `quantity`, `user_id`, `total_price`) VALUES ('$food_Id', '$quantity', '$user_id', '$total_price')";
+            $result=mysqli_query($conn,$sql_ins);
         }
 
         if ($result) {

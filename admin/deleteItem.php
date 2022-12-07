@@ -25,7 +25,7 @@
                 echo '
 
             <section class="menu">
-                <form class="searchForm form" method="post" action="'. $currentUrl.'">
+                <form class="searchForm form" id="search" method="post" action="'. $currentUrl.'">
                     <div>
                         <input type="search" name="query_adp" placeholder="Serch food item here">
                     </div>
@@ -123,7 +123,7 @@
 
                 </div>
 
-                <a href="#body" class="goToTop" id="goToTop"><button>Go To Top</button></a>
+                <a href="#search" class="goToTop" id="goToTop"><button>Go To Top</button></a>
 
             </section>';
             }

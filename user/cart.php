@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cart</title>
     <link rel="stylesheet" href="css/utils.css">
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="css/header_footer.css">
     <link rel="stylesheet" href="css/cart.css">
 </head>
@@ -130,10 +129,35 @@
                                         <div>To Pay</div> 
                                         <div>₹'.$itemTotal+$tax-$discount.' </div>
                                     
-                                    </div>';
-                            echo '
-                            </div>
-                        </div>';
+                                    </div>
+                            </div>';
+
+                            $address="SELECT * FROM `users` WHERE user_id=$user_id";
+                            $address_result=mysqli_query($conn,$address);
+                            $address_row=mysqli_fetch_assoc($address_result);
+
+                            if($address_row['address']==""|| $address_row['ph_No']=="0"){
+                                echo '
+                                    <form action="partial/_saveDetails.php" method="post" class="saveAddress">
+                                        <input type="hidden" name="user_id" value="'.$user_id.'">
+                                        <label for="address">Delivery address :</label>
+                                        <textarea name="address" id="" cols="30" rows="10" placeholder="Please enter your delivery address" required></textarea>
+                                        <label for="ph_No">Phone no.</label>
+                                        <input type="text" name="ph_No" id="ph_No" minlength="10" maxlength="10" required>
+                                        <button type="submit" class="btn" >Submit</button>
+                                    </form>
+                                    <button class="checkoutDisable">Checkout</button>
+                                    ';
+                            }
+                            else{
+                                echo '
+                                <form action="checkout.php" method="post" style="width:100%;display:flex;">
+                                <input type="hidden" name="toPay" value="'.$itemTotal+$tax-$discount.'">
+                                <input type="hidden" name="user_id" value="'.$user_id.'">
+                                <button type="submit" class="checkoutBtn">Checkout</button>
+                                </form>
+                                </div>';
+                            }
                     
                         
                 }

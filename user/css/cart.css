@@ -37,7 +37,8 @@
 }
 .table .cartItems .cartItem_Left h4{
     margin-right: 15px;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
+    line-break: anywhere;
     width: auto;
 }
 .table .cartItems .cartItem_Right{
@@ -68,4 +69,62 @@
 .table .grandTotal div{
     font-size: 1.4rem;
     font-weight: 600;
+}
+.table .saveAddress{
+    width: 35vw;
+    margin: 2vh 0;
+    display: flex;
+    flex-direction: column;
+    padding: 10px ;
+    background-color: rgb(210, 182, 182);
+    border-radius: 15px;
+}
+.table .saveAddress label{
+    font-size: 1.1rem;
+    padding: 0 5px;
+}
+.table .saveAddress textarea{
+    padding: 15px;
+    font-size: .85rem;
+    margin: 10px 0;
+    height: 10vh;
+    outline: none;
+    border-radius: 10px;
+}
+.table .saveAddress input{
+    padding: 10px;
+    font-size: .85rem;
+    margin: 10px 0;
+    outline: none;
+    border-radius: 10px;
+    
+}
+
+.checkoutDisable{
+    background-color: rgba(0, 0, 0, 0.18);
+    color: rgb(54, 53, 53);
+    font-size: .85rem;
+    width: 100%;
+    padding: 10px 50px;
+    margin: 3px 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    /* cursor: pointer; */
+}
+.checkoutBtn{
+    margin: 10px ;
+    width: 100%;
+    color: white;
+    background-color: violet;
+    font-size: .9rem;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 50px ;
+    border: 2px solid white;
+    border-radius: 15px;
+    transition: .2s ease-out;
+}
+.checkoutBtn:hover{
+    border: 2px solid violet;
+
 }

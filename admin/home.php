@@ -56,7 +56,7 @@
                                         $item="SELECT * FROM `food_items` WHERE food_Id=$food_id";
                                         $itemResult=mysqli_query($conn,$item);
                                         if ($itemRow=mysqli_fetch_assoc($itemResult)) {
-                                            $grand_total+=$row["total_price"];
+                                            $grand_total+=$row['total_price'];
                                             $sno= $sno+1;
                                             // <div>' . $sno. '.</div>
                                             echo '
@@ -79,11 +79,29 @@
                                                 ';
                                         }
                                     }
+                                    $orders= "SELECT * FROM `orders` WHERE order_id=$taskId";
+                                    $result=mysqli_query($conn,$orders);
+                                    $row=mysqli_fetch_assoc($result);
+
                                     echo '
-                                    <h1 class="grandTotal">₹'.$grand_total.'</h1>';
+                                    <h1 class="grandTotal">Grand Total : ₹'.$grand_total.'</h1>
+                                    <h1 class="grandTotal">To Pay : ₹'.$row['grand_total'].'</h1>';
                                 }
                                 else{
                                     echo '<h2>No task selected.</h2>';
+                                }
+                                if($row){
+                                    if($row['order_status']=="new"){
+                                    echo '
+                                    <form action="partial/_acceptOrder.php" method="post">
+                                        <input type="hidden" name="order_id" value="'.$row['order_id'].'">
+                                        <button type="submit" class="acptBtn">Accept order</button>
+                                    </form>';
+                                    }
+                                    else{
+                                        echo '  <button class="acptedBtn" disabled>Accepted</button>';
+
+                                    }
                                 }
                             echo '      
                         </div>

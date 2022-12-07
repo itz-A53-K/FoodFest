@@ -64,10 +64,11 @@
                                         }
                                     }
                                     else{
-                                        if ($srcRow['item_Available']=="No") {
-                                            echo '<p style="color:red; font-size:.9rem">Out of stock.</p>'; 
-                                         }
-                                        echo '<h1 class="btnDisable">Add to card</h1>';
+                                        // if ($srcRow['item_Available']=="No") {
+                                        //     echo '<p style="color:red; font-size:.9rem">Out of stock.</p>'; 
+                                        // }
+                                        echo '<p style="color:red; font-size:.9rem">Please login first.</p>
+                                        <h1 class="btnDisable">Add to card</h1>';
                                     }
                                 echo '   
                                 </form> 
@@ -88,7 +89,7 @@
                 </div>';
             }
 
-            else{
+            else if(isset($_GET['category_id'])){
                 
                 $category_id= $_GET['category_id'];
                 $sql= "SELECT * FROM `food_items` WHERE category_id = $category_id";
@@ -122,10 +123,56 @@
                                         }
                                     }
                                     else{
+                                        // if ($row['item_Available']=="No") {
+                                        //     echo '<p style="color:red; font-size:.9rem">Out of stock.</p>'; 
+                                        //  }
+                                        echo '<p style="color:red; font-size:.9rem">Please login first.</p>
+                                        <h1 class="btnDisable">Add to card</h1>';
+                                    }
+                                echo '   
+                                </form> 
+                            </div>
+                        </div>   
+                    ';
+                }
+            }
+            else{
+                $sql= "SELECT * FROM `food_items`";
+                $result = mysqli_query($conn,$sql);
+
+                echo '<h2>Food Items</h2>';
+                while($row = mysqli_fetch_assoc($result)){
+                    echo '
+                        <div class="card">
+                            <img src="../img/'.$row["food_Item_img_path"].'" alt="" srcset="">
+                        
+                            <div>
+                                <h4 class="foodName">'.$row["food_Name"].'</h4>
+                                <span>₹'.$row["price"].'</span> 
+                                <p>'.$row["food_Desc"].'</p>
+                        
+                                <form action="partial/_addToCart.php" method="post" >
+                                    <input type="hidden" value="'.$row["food_Id"].'" name="food_Id">
+                                    <input type="hidden" value="'. $_SERVER['REQUEST_URI'].'" name="currentUrl">
+                                    ';
+                                    if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']=='true'){
+                                        
                                         if ($row['item_Available']=="No") {
-                                            echo '<p style="color:red; font-size:.9rem">Out of stock.</p>'; 
-                                         }
-                                        echo '<h1 class="btnDisable">Add to card</h1>';
+                                            echo '<p style="color:red; font-size:.9rem">Out of stock.</p>
+                                            <h1 class="btnDisable">Add to card</h1>'; 
+                                        }
+                                        else{
+                                            echo '<input type="hidden" name="user_id" id="" value="'.$_SESSION['user_id'].'">
+                                            <input type="number" name="quantity" id="" value="1">
+                                            <button class="btn" type="submit">Add to cart</button>';
+                                        }
+                                    }
+                                    else{
+                                        // if ($row['item_Available']=="No") {
+                                        //     echo '<p style="color:red; font-size:.9rem">Out of stock.</p>'; 
+                                        //  }
+                                        echo '<p style="color:red; font-size:.9rem">Please login first.</p>
+                                        <h1 class="btnDisable">Add to card</h1>';
                                     }
                                 echo '   
                                 </form> 

@@ -13,14 +13,14 @@
             while($row=mysqli_fetch_assoc($result))
             {
                 echo '
-                    <a href="?taskId='.$row["order_id"].'">
+                    <a href="'.$_SERVER['REQUEST_URI'].'&taskId='.$row["order_id"].'">
                         <div class="taskCard">
                             <div class="taskDetails">
                                 <p>Task #'.$row["order_id"].'</p>
                                 <span>'.$row["order_time"].'</span>
                             </div>
                             <div class="price">
-                                <h2>₹'.$row["total_price"].'</h2>
+                                <h2>₹'.$row["grand_total"].'</h2>
                                 <p> '.$row["order_status"].'</p>
                             </div>
                         </div>
@@ -42,14 +42,14 @@
             while($row=mysqli_fetch_assoc($result))
             {
                 echo '
-                <a href="?taskId='.$row["order_id"].'">
+                <a href="'.$_SERVER['REQUEST_URI'].'&taskId='.$row["order_id"].'">
                     <div class="taskCard">
                         <div class="taskDetails">
                             <p>Task #'.$row["order_id"].'</p>
                             <span>'.$row["order_time"].'</span>
                         </div>
                         <div class="price">
-                            <h2>₹'.$row['total_price'].'</h2>
+                            <h2>₹'.$row['grand_total'].'</h2>
                             <p> '.$row["order_status"].'</p>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
     }
     else{
         $orders= "SELECT * FROM `orders` WHERE order_status='new' ORDER BY `order_id` DESC";
-            $result=mysqli_query($conn,$orders);
+        $result=mysqli_query($conn,$orders);
 
         while($row=mysqli_fetch_assoc($result))
         {

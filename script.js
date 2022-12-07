@@ -7,8 +7,16 @@ document.querySelectorAll('.itemLink').forEach(link =>{
     
 })
 
-if (window.location.href == "http://localhost/FoodFest/admin/home.php?btn=preparing" || window.location.href == "http://localhost/FoodFest/admin/home.php?btn=delivered" ) {
+if (/home/.test(window.location.href))  {
     document.getElementById("home").classList.add('activePage');
+}
+else if(/modifyItem/.test(window.location.href) ){
+    document.getElementById("modifyItem").classList.add('activePage');
+    
+}
+else if(/deleteItem/.test(window.location.href) ){
+    document.getElementById("deleteItem").classList.add('activePage');
+    
 }
 
 disableBtn=document.getElementsByClassName('.btnDisable')

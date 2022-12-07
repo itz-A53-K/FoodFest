@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(session_status() != PHP_SESSION_ACTIVE){
+    session_start();
+}
 ?>
 <header>
     <nav class="navBar" id="navBar">
@@ -27,6 +29,9 @@ session_start();
                             <a class="itemLink" href="#">About</a>
                         </li>
                         <li class="listItem">
+                            <a class="itemLink" href="/FoodFest/user/food_Item.php">Food items</a>
+                        </li>
+                        <li class="listItem">
                             <a class="itemLink" href="/FoodFest/user/cart.php">Cart</a>
                         </li>
 
@@ -47,6 +52,9 @@ session_start();
                         </li>
                         <li class="listItem">
                             <a class="itemLink" href="#">About</a>
+                        </li>
+                        <li class="listItem">
+                            <a class="itemLink" href="/FoodFest/user/food_Item.php">Food items</a>
                         </li>
                         <li class="listItem">
                             <a class="itemLink" href="/FoodFest/account.php">Sign In</a>
