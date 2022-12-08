@@ -29,7 +29,9 @@
                     $insertResult = mysqli_query($conn, $insert);
 
                     if ($insertResult) {
-                        echo "inserted";
+                        header ("Location:/FoodFest/index.php");
+                        exit();
+                        // echo "inserted";
                     }
                     else{
                         echo ' not inserted ';

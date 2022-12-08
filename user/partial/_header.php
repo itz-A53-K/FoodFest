@@ -29,7 +29,7 @@ if(session_status() != PHP_SESSION_ACTIVE){
                             <a class="itemLink" href="#">About</a>
                         </li>
                         <li class="listItem">
-                            <a class="itemLink" href="/FoodFest/user/food_Item.php">Food items</a>
+                            <a class="itemLink" href="/FoodFest/user/food_Item.php">Food Items</a>
                         </li>
                         <li class="listItem">
                             <a class="itemLink" href="/FoodFest/user/cart.php">Cart</a>
@@ -54,7 +54,7 @@ if(session_status() != PHP_SESSION_ACTIVE){
                             <a class="itemLink" href="#">About</a>
                         </li>
                         <li class="listItem">
-                            <a class="itemLink" href="/FoodFest/user/food_Item.php">Food items</a>
+                            <a class="itemLink" href="/FoodFest/user/food_Item.php">Food Items</a>
                         </li>
                         <li class="listItem">
                             <a class="itemLink" href="/FoodFest/account.php">Sign In</a>

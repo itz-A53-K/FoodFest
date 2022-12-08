@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&family=Rubik+Glitch&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital@1&family=Nerko+One&family=Rubik+Vinyl&family=Spectral+SC:ital,wght@0,400;1,300&display=swap');
 /* font-family: 'Rubik Distressed', cursive;
 font-family: 'Rubik Glitch', cursive; 
 font-family: 'Indie Flower', cursive;*/
 /* font-family: Okra, Helvetica, sans-serif; */
 
+/* font-family: 'Asap Condensed', sans-serif;
+font-family: 'Nerko One', cursive;
+font-family: 'Rubik Vinyl', cursive;
+font-family: 'Spectral SC', serif; */
 
 .activePage{
     /* active page link css */
