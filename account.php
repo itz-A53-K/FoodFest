@@ -83,9 +83,10 @@
                                     <!-- <label for="userName">User Name :</label> -->
                                     <input type="text" id="userName" name="userName" placeholder="User Name" maxlength="10">
                                 </div>
-                                <div>
+                                <div id="flex">
                                     <!-- <label for="userEmail">Email :</label> -->
-                                    <input type="email" id="userEmail" name="userEmail" placeholder="Email">
+                                    <input type="email" id="userEmail" name="userEmail" placeholder="Email"> 
+                                    <button type="submit" id="verify">Verify</button>
                                 </div>
                                 <div>
                                     <!-- <label for="userPass">Password :</label> -->

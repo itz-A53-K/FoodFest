@@ -125,3 +125,20 @@ form a {
     height: 5vh;
     letter-spacing: 5px;
 }
+
+#flex{
+    display: flex;
+    align-items: center;
+}
+#verify
+{
+    height: 26px;
+    /* width: 50px; */
+    /* bottom: 20px; */
+    margin-left: 7px;
+}
+
+#userEmail
+{
+    margin-left: 14px;
+}
