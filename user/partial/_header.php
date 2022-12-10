@@ -18,7 +18,6 @@ if(session_status() != PHP_SESSION_ACTIVE){
                 <!-- <label for="query" type="submit">dsffdg</label> -->
             </form>
             <?php
-            // if(isset($_COOKIE["loggedin"])){
             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']=='true'){
                 echo '
                     <ul>
@@ -35,7 +34,7 @@ if(session_status() != PHP_SESSION_ACTIVE){
                             <a class="itemLink" href="/FoodFest/user/cart.php">Cart</a>
                         </li>
 
-                        <h2>Hi&nbsp; <em>'.$_SESSION['userName'].'</em></h2>
+                        <h2>Hi&nbsp; <a href="/FoodFest/user/partial/_profile.php"><em>'.$_SESSION['userName'].'</em></a></h2>
                         
                         <button class="headerBtn logoutBtn">Logout</button>
                         
