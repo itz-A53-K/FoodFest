@@ -31,7 +31,7 @@
 
 		if(isset($_POST['sendmail'])) {
 			require '../../PHPMailerAutoload.php';
-			require 'credential.php';
+			// require 'credential.php';
 
 			$mail = new PHPMailer;
 

@@ -105,11 +105,15 @@
                                     <!-- <button type="submit">Submit</button> -->
                                 </div>
                                 <?php
-                                
                                 if(isset($_SESSION['otp'])){
                                     echo '
-                                <button type="submit" class="btnLarge" >Signup</button>';}?>
-                                <input type="button" class="btnLarge" value="Varify">
+                                    <button type="submit" class="btnLarge">Signup</button>';
+                                }
+                                else{
+                                    echo'                                
+                                    <input type="button" class="btnLarge" value="Varify email" id="varify" onclick="">';
+                                }
+                                ?>
                                 <!-- <button type="reset" class="btn">Reset</button> -->
                             </form>
                         </div>
@@ -141,15 +145,24 @@
         </div>
     </section>
 
-    <footer>
+    <div class="varification hidden">
+        <form action="" method="post">
+
+        <input type="text" id="otp">
+        <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+
+    <!-- <footer>
         <h1>Copyright &copy; FoodFest.com</h1>
         <p>Prepared by: Abinash, Samir.</p>
-    </footer>
+    </footer> -->
 
 
+    <script src="user/js/otp.js"></script>
     <script src="user/js/password_ver.js"></script>
     <script src="user/js/loginDesign.js"></script>
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
