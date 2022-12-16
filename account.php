@@ -13,6 +13,7 @@
 
 <body onload="createCaptcha(),createCaptchaL()">
     <?php 
+    session_start();
     include 'user/partial/_dbConnect.php';
     ?>
 
@@ -99,11 +100,16 @@
                                     <!-- captcha creation -->
                                     <!-- <div id="captcha">
                                     </div> -->
-                                    <h2 id="captcha"></h2>
                                     <input type="text" placeholder="Captcha" id="cpatchaTextBox">
+                                    <h2 id="captcha"></h2>
                                     <!-- <button type="submit">Submit</button> -->
                                 </div>
-                                <button type="submit" class="btnLarge">Signup</button>
+                                <?php
+                                
+                                if(isset($_SESSION['otp'])){
+                                    echo '
+                                <button type="submit" class="btnLarge" >Signup</button>';}?>
+                                <input type="button" class="btnLarge" value="Varify">
                                 <!-- <button type="reset" class="btn">Reset</button> -->
                             </form>
                         </div>
