@@ -1,11 +1,10 @@
 <?php
-if ($_SERVER['REQUEST_METHOD']=="POST") {
     
-    $currentUrl=$_POST['currentUrl'];
+    // $currentUrl=$_POST['currentUrl'];
     session_start();
     session_destroy();
-    header ("Location:$currentUrl");
-    exit();
+    $alert="You have logged out successfully.";
+   
 
     //logout using cookie (not working)
     // if (isset($_COOKIE["loggedin"])) {
@@ -18,12 +17,9 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
     //     header ("Location:$currentUrl");
     //     exit();
     // }
-}
-else{
-       $showError ="Some error occurred .";
-    }
-        
-    header ("Location:$currentUrl");
+    session_start();
+    $_SESSION['alert']=$alert;
+    header ("Location:../../index.php");
 
 
 ?>

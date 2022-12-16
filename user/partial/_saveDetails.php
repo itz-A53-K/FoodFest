@@ -11,6 +11,9 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
     $result=mysqli_query($conn,$sql);
 
     if($result){
+        $alert="Your delivery address has been set successfully.";
+        session_start();
+        $_SESSION['alert']=$alert;
         header('Location:../cart.php');
     }
 }

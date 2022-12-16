@@ -183,18 +183,21 @@
             }
         
         ?>
+
+        <?php
+            include 'partial/_alert.php';
+        ?> 
+
+
     </div>
 
-    <div class="logoutModal hidden">
-        <h3>Do you really want to logout?</h3>
-        <div>
-            <button class="btn cancelBtn">Cancel</button>
-            <form action="partial/_logoutFunctional.php" method="post">
-                <input type="hidden" name="currentUrl" value="<?php echo $_SERVER['REQUEST_URI'];?>">
-                <button type="submit" class="btn">Logout</button>
-            </form>
-        </div>
-    </div>
+    
+
+    <footer>
+        <h1>Copyright &copy; FoodFest.com</h1>
+        <p>Prepared by: Abinash, Samir.</p>
+    </footer>
+
     <script src="/FoodFest/script.js"></script>
     <script src="js/logout.js"></script>
     <script>

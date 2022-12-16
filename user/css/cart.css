@@ -1,8 +1,9 @@
 .cartContainer{
-    margin-top: 15vh;
+    margin: 15vh 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 62.6vh;
 }
 .cartContainer h1{
     font-size: 1.5rem;

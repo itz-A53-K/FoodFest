@@ -30,11 +30,25 @@ if(session_status() != PHP_SESSION_ACTIVE){
                         <li class="listItem">
                             <a class="itemLink" href="/FoodFest/user/food_Item.php">Food Items</a>
                         </li>
-                        <li class="listItem">
-                            <a class="itemLink" href="/FoodFest/user/cart.php">Cart</a>
+                        <li class="listItem">';
+                        include '_dbConnect.php';
+                        $user_id=$_SESSION['user_id'];
+                        $sql="SELECT * FROM `cart` WHERE user_id=$user_id";
+                        $result=mysqli_query($conn,$sql);
+                        if($result){
+                            $noOfRows=mysqli_num_rows($result);
+                            echo '
+                            <a href="/FoodFest/user/cart.php"><label for="Cart">'.$noOfRows.'</label></a>
+                            ';
+                        }
+                        echo '
+                        <a class="itemLink" id ="cart" href="/FoodFest/user/cart.php">Cart</a>
+                        </li>
+                        <li class="listItem" style="margin:0 ;">
+                            <a class="itemLink" href="/FoodFest/user/profile.php"><img src="/FoodFest/img/user_profile.png" alt="" srcset="" style="width:50px;"></a>
                         </li>
 
-                        <h2>Hi&nbsp; <a href="/FoodFest/user/partial/_profile.php"><em>'.$_SESSION['userName'].'</em></a></h2>
+                        <h2>Hi&nbsp; <em>'.$_SESSION['userName'].'</em></a></h2>
                         
                         <button class="headerBtn logoutBtn">Logout</button>
                         

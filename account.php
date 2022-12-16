@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="user/css/header_footer.css">
 </head>
 
-<body onload="createCaptcha(), createCaptchaL()">
+<body onload="createCaptcha(),createCaptchaL()">
     <?php 
     include 'user/partial/_dbConnect.php';
     ?>
@@ -50,7 +50,7 @@
 
                         <div class="loginModule" id="loginModule">
                             <form action="user/partial/_loginFunctional.php" method="post" class="form" id="LoginForm"
-                                onsubmit="validateCaptchaL()">
+                                onsubmit="return validateCaptchaL()">
                                 <!-- <h4>Login</h4> -->
                                 <div class="login">
                                     <!-- <label for="loginUserEmail">Email :</label> -->
@@ -63,13 +63,10 @@
                                         name="loginPassword" required>
                                 </div>
                                 <div>
-                                    <!-- captcha creation -->
-                                    <!-- <div id="captcha">
-                                    </div> -->
-                                    <h2 id="captcha1"></h2>
-                                    <input type="text" placeholder="Captcha" id="cpatchaTextBox1" />
-                                    <!-- <button type="submit">Submit</button> -->
-                                </div>
+                                <!-- captcha creation -->
+                                <h2 id="captcha1"></h2>
+                                <input type="text" placeholder="Captcha" id="cpatchaTextBox1" />
+                            </div>
                                 <button type="submit" class="btnLarge">Login</button>
                             </form>
                         </div>
@@ -98,10 +95,10 @@
                                     <input type="password" id="confirmPass" name="confirmPass"
                                         placeholder="Confirm Password">
                                 </div>
-                                <div>
+                                <div id="captchaDiv">
                                     <!-- captcha creation -->
                                     <!-- <div id="captcha">
-                        </div> -->
+                                    </div> -->
                                     <h2 id="captcha"></h2>
                                     <input type="text" placeholder="Captcha" id="cpatchaTextBox">
                                     <!-- <button type="submit">Submit</button> -->
@@ -111,7 +108,8 @@
                             </form>
                         </div>
 
-                        <form action="admin/partial/_adminLoginFunctional.php" method="post" class="form" id="AdminForm" onsubmit="">
+                        <form action="admin/partial/_adminLoginFunctional.php" method="post" class="form" id="AdminForm" >
+                            <!-- onsubmit="return validateCaptchaL()"> -->
                             <!-- <h4>Login</h4> -->
                             <div class="login">
                                 <!-- <label for="loginUserEmail">Email :</label> -->
@@ -122,6 +120,11 @@
                                 <input type="password" id="adminLoginPassword" placeholder="Password" name="adminLoginPassword"
                                     required>
                             </div>
+                            <!-- <div>
+                                captcha creation
+                                <h2 id="captcha1"></h2>
+                                <input type="text" placeholder="Captcha" id="cpatchaTextBox1" />
+                            </div> -->
 
                             <button type="submit" class="btnLarge">Login</button>
                         </form>
@@ -132,7 +135,10 @@
         </div>
     </section>
 
-
+    <footer>
+        <h1>Copyright &copy; FoodFest.com</h1>
+        <p>Prepared by: Abinash, Samir.</p>
+    </footer>
 
 
     <script src="user/js/password_ver.js"></script>

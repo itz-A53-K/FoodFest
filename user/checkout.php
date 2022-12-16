@@ -61,6 +61,10 @@
 
         </div>
     </div>
-    
+    <footer>
+        <h1>Copyright &copy; FoodFest.com</h1>
+        <p>Prepared by: Abinash, Samir.</p>
+    </footer>
+    <script src="js/logout.js"></script>
 </body>
 </html>

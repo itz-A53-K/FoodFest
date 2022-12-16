@@ -24,6 +24,29 @@ disableBtn=document.getElementsByClassName('.btnDisable')
 Array.from(disableBtn).forEach((element) =>{
     element.addEventListener("click", (e)=>{
         // alert("Hello! I am an alert box!!");
-        console.log("kjdhfhsdkhifdh");
+        // console.log("kjdhfhsdkhifdh");
     })
 })
+
+moreBtn=document.getElementsByClassName('more')
+// console.log(disableBtn);
+Array.from(moreBtn).forEach((element) =>{
+    element.addEventListener("click", (e)=>{
+        id=e.target.id;
+        
+        orderDetails=document.getElementById("orderDetails"+id).classList;
+        orderDetails.toggle('hidden');
+        // console.log(orderDetails);
+    })
+})
+
+document.querySelector('#closeAlert').addEventListener("click",(e)=>{
+    currentUrl=window.location.href;
+    cutUrl=currentUrl.slice(0,currentUrl.indexOf('?'));
+    // console.log(cutUrl);
+    // document.querySelector('.alert').classList.add('hidden');
+        // window.location = cutUrl;
+        location.reload(true);
+
+})
+

@@ -32,12 +32,13 @@ if ($method =='POST') {
                 $_SESSION['loggedin'] = true;
                 $_SESSION['userName'] = $row['userName'];
                 $_SESSION['user_id'] = $row['user_id'];
-                header ("Location:/FoodFest/index.php");
-                exit();
+                // header ("Location:/FoodFest/index.php");
+                $alert="You have loggedin successfully.";
+                // exit();
                         
         }
         else{
-            echo 'not verified';
+            $alert="Password do not match.";
         }
         
         
@@ -50,9 +51,17 @@ if ($method =='POST') {
         
         
     }
-    else{
-    echo '!=1';
+    else if($noOfRows<1){
+            $alert="No account found!";
+            
     }
+    else{
+        $alert="Some Error Occured ! Please try again after some time.";
+    }
+    session_start();
+    $_SESSION['alert']=$alert;
+    header ("Location:/FoodFest/index.php");
+    // header ("Location:/FoodFest/index.php?alert=$alert");
 }
 
 ?>

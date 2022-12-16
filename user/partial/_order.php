@@ -33,13 +33,15 @@ if ($_SERVER['REQUEST_METHOD'] =="POST") {
     $dlt_cartItem_result=mysqli_query($conn,$dlt_cartItem);
 
     if($dlt_cartItem){
-        
-    // echo var_dump($result2); 
+         
         if($paymentMethod=="PayU"){
             echo "Waiting to confirm the payment ....";
             echo "<script type=\"text/javascript\">
             window.open('https://www.payu.in', '_blank')
             </script>";
+                $alert="Ordered successfully. <a href='/FoodFest/user/profile.php'>Track order</a>";
+                session_start();
+                $_SESSION['alert']=$alert;
             echo "<script type=\"text/javascript\">
             setTimeout(() => {  window.location.href='http://localhost/FoodFest/index.php' }, 15000);
             
@@ -48,6 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] =="POST") {
             // header('Location:../../index.php');
         }
         else{
+            $alert="Ordered successfully. <a href='/FoodFest/user/profile.php'>Track order</a>";
+            session_start();
+            $_SESSION['alert']=$alert;
             header('Location:../../index.php');
 
         }

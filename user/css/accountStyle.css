@@ -1,5 +1,5 @@
 .account {
-    margin-top: 7vh;
+    margin: 7vh 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,4 +124,19 @@ form a {
     font-style: italic;
     height: 5vh;
     letter-spacing: 5px;
+}
+#captchaDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+#captchaDiv h2{
+    font-size: 1.1rem;
+    margin-top: 10px ;
+    width: 100px;
+}
+#captchaDiv input{
+   width: 6.5vw;
+   /* margin-left: 17px; */
 }

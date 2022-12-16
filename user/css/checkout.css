@@ -3,9 +3,10 @@
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
+    
 }
 .checkout{
-    margin-top: 17vh;
+    margin: 17vh 0;
     width: fit-content;
     padding: 15px;
     background-color: rgba(209, 225, 209, 0.753);

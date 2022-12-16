@@ -38,11 +38,18 @@ if ($method=="POST") {
         }
 
         if ($result) {
+
+            $alert="$quantity item added to cart. Go to <a href='/FoodFest/user/cart.php'>cart</a>";
+            session_start();
+            $_SESSION['alert']=$alert;
             header ("Location:$currentUrl");
             exit();
         }
     }
     else{
+        $alert="Sorry! This item is out of stock for now. Please try after some time.";
+            session_start();
+            $_SESSION['alert']=$alert;
         header ("Location:$currentUrl");
 
     }
