@@ -25,7 +25,7 @@
             echo '
                 <section class="taskMenu">
                     <h1>Task List</h1>
-                    <p>Date :&nbsp;'.date("M j , Y").' </p>
+                    <p class="date">Date :&nbsp;'.date("M j , Y").' </p>
                     <div class="taskBtnSec">
                         <input type="hidden" name="currentUrl" value="cur">
                         <a href="/FoodFest/admin/home.php"><button type="submit" id="newBtn" class="taskBtn ClickedTaskBtn">New</button></a>
@@ -142,7 +142,7 @@
     <script src="/FoodFest/script.js"></script>
     <script src="js/adminLogout.js"></script>
     <script>
-        // setTimeout("location.reload(true);", 10000);
+        setTimeout("location.reload(true);", 10000);
     </script>
     
 </body>
