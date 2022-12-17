@@ -84,7 +84,16 @@
                                 </div>
                                 <div>
                                     <!-- <label for="userEmail">Email :</label> -->
-                                    <input type="email" id="userEmail" name="userEmail" placeholder="Email">
+                                    <?php
+                                    if(isset($_SESSION['otpVarified'])&& $_SESSION['otpVarified']=="TRUE"){
+                                        echo '<input type="email" class="userEmail" name="userEmail" value="'.$_SESSION['verifyEmail'].'"  disabled>';
+                                    }
+                                    else{
+                                        echo'
+                                        <input type="email" class="userEmail" name="userEmail" placeholder="Email">';
+
+                                    }
+                                    ?>
                                 </div>
                                 <div>
                                     <!-- <label for="userPass">Password :</label> -->
@@ -105,17 +114,23 @@
                                     <!-- <button type="submit">Submit</button> -->
                                 </div>
                                 <?php
-                                if(isset($_SESSION['otp'])){
+                                if(isset($_SESSION['otpVarified'])&& $_SESSION['otpVarified']=="TRUE"){
                                     echo '
                                     <button type="submit" class="btnLarge">Signup</button>';
                                 }
-                                else{
+                                ?>
+                                </form>
+                                <?php
+                                if(!isset($_SESSION['otpVarified'])){
                                     echo'                                
-                                    <input type="button" class="btnLarge" value="Varify email" id="varify" onclick="">';
+                                    <form action="otp_send.php" method="post" class="formVarify">
+                                    <input type="hidden" id="verifyEmail" name="verifyEmail">
+                                    <input type="submit" class="btnLarge" value="Verify email" id="verify" >
+                                    </form>
+                                    ';
                                 }
                                 ?>
                                 <!-- <button type="reset" class="btn">Reset</button> -->
-                            </form>
                         </div>
 
                         <form action="admin/partial/_adminLoginFunctional.php" method="post" class="form" id="AdminForm" >
@@ -145,13 +160,17 @@
         </div>
     </section>
 
-    <div class="varification hidden">
-        <form action="" method="post">
-
-        <input type="text" id="otp">
-        <button type="submit" class="btn">Submit</button>
-        </form>
-    </div>
+        <div class="varification hidden">
+            <form action="/FoodFest/user/partial/_otp_varify.php" method="post">
+                <h2>An One Time Password(OTP) has been sent to your email</h2>
+                <input type="hidden" id="email" placeholder="">
+                <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+        
+   
+    
 
     <!-- <footer>
         <h1>Copyright &copy; FoodFest.com</h1>
@@ -163,6 +182,12 @@
     <script src="user/js/password_ver.js"></script>
     <script src="user/js/loginDesign.js"></script>
     <script src="script.js"></script>
+    <script>
+        if(/otpSent/.test(window.location.href)){
+            // console.log("preparing");
+            document.querySelector('.varification').classList.remove('hidden');
+        }
+</script>
 </body>
 
 </html>

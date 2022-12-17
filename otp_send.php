@@ -1,0 +1,80 @@
+
+<?php 
+	/*Update credentials*/
+	define('EMAIL', '');
+	define('PASS', '');
+ ?>
+	<?php 
+		   $generator = "1357902468";
+  
+		   // Iterate for n-times and pick a single character
+		   // from generator and append it to $result
+			 
+		   // Login for generating a random character from generator
+		   //     ---generate a random number
+		   //     ---take modulus of same with length of generator (say i)
+		   //     ---append the character at place (i) from generator to result
+		 
+		   $result = "";
+		   $resultF = "";
+		 
+		   for ($i = 1; $i <= 4; $i++) {
+			   $result .= substr($generator, (rand()%(strlen($generator))), 1);
+		   }
+		
+		   	session_start();
+			$_SESSION['otp']=$result;
+		   //otp_gen_END
+
+
+		if($_SERVER['REQUEST_METHOD']=="POST") {
+			require 'PHPMailerAutoload.php';
+			 require 'account.php';
+
+			 echo $_POST['verifyEmail'];
+			 $_SESSION['verifyEmail']=$_POST['verifyEmail'];
+
+			$mail = new PHPMailer;
+
+			// $mail->SMTPDebug = 4;                               // Enable verbose debug output
+
+			$mail->isSMTP();                                      // Set mailer to use SMTP
+			$mail->Host = 'tls://smtp.gmail.com';  // Specify main and backup SMTP servers
+			$mail->SMTPAuth = true;                               // Enable SMTP authentication
+			$mail->Username = 'gokuui720@gmail.com';                 // SMTP username
+			$mail->Password = 'bshvdcsqcvcysoqs';                           // SMTP password
+			
+			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+			$mail->Port = 587;                                    // TCP port to connect to
+
+			$mail->setFrom(EMAIL, 'Dsmart Tutorials');
+			$mail->addAddress($_POST['verifyEmail']);     // Add a recipient or address we want to sent to
+
+			// $mail->addReplyTo(EMAIL);
+			// print_r($_FILES['file']); exit;
+			// for ($i=0; $i < count($_FILES['file']['tmp_name']) ; $i++) { 
+			// 	$mail->addAttachment($_FILES['file']['tmp_name'][$i], $_FILES['file']['name'][$i]);    // Optional name
+			// }
+			// $mail->isHTML(true);                                  // Set email format to HTML
+				$resultF="Your One Time Password is ".$result." . Please do not share with anybody. ";
+			// $mail->Subject = $_POST['subject'];
+			$mail->Body    = $resultF;
+			// $mail->AltBody = $_POST['message'];
+
+			if(!$mail->send()) {
+				
+				unset($_SESSION['otp']);
+			    echo 'Message could not be sent.';
+			    echo 'Mailer Error: ' . $mail->ErrorInfo;
+			} else {
+				
+			    // echo 'Message has been sent';
+				// header('Location: /FoodFest/account.php?otpSent=1');
+				echo "<script>document.location = 'http://localhost/FoodFest/account.php?otpSent'</script>";
+			}
+		}
+
+
+		
+	 ?>
+	 
