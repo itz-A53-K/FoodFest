@@ -114,7 +114,7 @@
 }
 .checkoutBtn{
     margin: 10px ;
-    width: 100%;
+    width: auto;
     color: white;
     background-color: violet;
     font-size: .9rem;

@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] =="POST") {
             echo "<script type=\"text/javascript\">
             window.open('https://www.payu.in', '_blank')
             </script>";
-                $alert="Ordered successfully. <a href='/FoodFest/user/profile.php'>Track order</a>";
+                $alert="<span class='success'>Success!</span> Ordered successfully. <a href='/FoodFest/user/profile.php'>Track order</a>";
                 session_start();
                 $_SESSION['alert']=$alert;
             echo "<script type=\"text/javascript\">
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] =="POST") {
             // header('Location:../../index.php');
         }
         else{
-            $alert="Ordered successfully. <a href='/FoodFest/user/profile.php'>Track order</a>";
+            $alert="<span class='success'>Success!</span> Ordered successfully. <a href='/FoodFest/user/profile.php'>Track order</a>";
             session_start();
             $_SESSION['alert']=$alert;
             header('Location:../../index.php');

@@ -13,6 +13,7 @@
     <?php
         session_start();
         include 'partial/_header.php';
+        // include 'partial/_alert.php';
     ?>
     <div class="body">
         <div class="checkout">
@@ -20,6 +21,22 @@
             <?php
                 if ($_SERVER['REQUEST_METHOD']==='POST' && (isset($_SESSION['loggedin']) && $_SESSION['loggedin']='true')) {
                     include 'partial/_dbConnect.php';
+
+                    //add address to db
+                    $address=$_POST['address'];
+                    $user_id=$_POST['user_id'];
+                    $ph_No=$_POST['ph_No'];
+                    // echo $address;
+                    // echo $user_id;
+                    // echo $ph_No;
+                    $sql="UPDATE `users` SET `address`='$address',`ph_No`='$ph_No' WHERE `users`. user_id=$user_id";
+                    $result=mysqli_query($conn,$sql);
+
+                    if($result){
+                        $alert="<span class='success'>Success!</span> Your delivery address has been set successfully.";
+                        $_SESSION['alert']=$alert;
+                        
+                    
                         $toPay=$_POST['toPay'];
                         $user_id=$_POST['user_id'];
                         // echo $toPay ;
@@ -31,7 +48,8 @@
                         <h1> Bill Total : ₹'.$toPay.'</h1>
                         <div class="details">
                             <label for="details">Your details</label>
-                            <p>'.$details_row['userName'].', '.$details_row['address'].', '.$details_row['ph_No'].'</p>
+                            <p>'.$details_row['userName'].', '.$details_row['address'].'</p>
+                            <p> '.$details_row['ph_No'].'</p>
                         </div>
                         <form action="partial/_order.php" method="post">
                             <div class="paymentMethod">
@@ -52,7 +70,13 @@
                                 <h3>Place order ></h3>
                             </button>
                         </form>';
-
+                    }
+                    else{
+                        $alert="<span class='error'>Error!</span> Your delivery address can't be set. Please try again";
+                        
+                        $_SESSION['alert']=$alert;
+                        header('Location:../cart.php');
+                    }
                 }
                 else{
                     header('Location:../index.php');

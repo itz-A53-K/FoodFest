@@ -3,7 +3,7 @@
     // $currentUrl=$_POST['currentUrl'];
     session_start();
     session_destroy();
-    $alert="You have logged out successfully.";
+    $alert="<span class='success'>Success!</span> You have logged out successfully.";
    
 
     //logout using cookie (not working)

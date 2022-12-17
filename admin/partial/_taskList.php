@@ -2,6 +2,7 @@
     include '_dbConnect.php';
     if (isset($_GET['btn'])) {
         $btn=$_GET['btn'];
+        $btn=$_GET['btn'];
         // $url=$_SERVER["REQUEST_URI"];
 
 
@@ -13,9 +14,9 @@
             while($row=mysqli_fetch_assoc($result))
             {
                 echo '
-                    <a href="'.$_SERVER['REQUEST_URI'].'&taskId='.$row["order_id"].'">
-                        <div class="taskCard">
-                            <div class="taskDetails">
+                    <a href="?btn='.$btn.'&taskId='.$row["order_id"].'">
+                        <div class="taskCard" id="taskCard'.$row["order_id"].'">
+                            <div class="taskDetails" >
                                 <p>Task #'.$row["order_id"].'</p>
                                 <span>'.$row["order_time"].'</span>
                             </div>
@@ -42,8 +43,38 @@
             while($row=mysqli_fetch_assoc($result))
             {
                 echo '
-                <a href="'.$_SERVER['REQUEST_URI'].'&taskId='.$row["order_id"].'">
-                    <div class="taskCard">
+                <a href="?btn='.$btn.'&taskId='.$row["order_id"].'">
+                    <div class="taskCard" id="taskCard'.$row["order_id"].'">
+                        <div class="taskDetails">
+                            <p>Task #'.$row["order_id"].'</p>
+                            <span>'.$row["order_time"].'</span>
+                        </div>
+                        <div class="price">
+                            <h2>₹'.$row['grand_total'].'</h2>
+                            <p> '.$row["order_status"].'</p>
+                        </div>
+                    </div>
+                </a>
+                ';
+                // exit();
+                // header("Location:$url");
+            }
+            if(mysqli_num_rows($result) == 0){
+                echo '
+                        <h2>No Task Available !
+                    
+                ';
+            }
+        }
+        else if($btn=="Out_For_Delivery"){
+            $orders= "SELECT * FROM `orders` WHERE order_status='Out for delivery' ORDER BY `order_id` DESC";
+            $result=mysqli_query($conn,$orders);
+
+            while($row=mysqli_fetch_assoc($result))
+            {
+                echo '
+                <a href="?btn='.$btn.'&taskId='.$row["order_id"].'">
+                    <div class="taskCard" id="taskCard'.$row["order_id"].'">
                         <div class="taskDetails">
                             <p>Task #'.$row["order_id"].'</p>
                             <span>'.$row["order_time"].'</span>
@@ -74,7 +105,7 @@
         {
             echo '
             <a href="?taskId='.$row["order_id"].'">
-            <div class="taskCard">
+            <div class="taskCard" id="taskCard'.$row["order_id"].'">
                 <div class="taskDetails">
                     <p>Task #'.$row["order_id"].'</p>
                     <span>'.$row["order_time"].'</span>

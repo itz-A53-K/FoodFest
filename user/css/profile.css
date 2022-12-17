@@ -1,7 +1,7 @@
 .body2{
     width: 98vw;
-    height: 85vh;
-    margin: 15vh 0;
+    min-height: 85vh;
+    margin-top: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,6 +52,17 @@
     flex-direction: column;
     padding: 20px;
     /* align-items: center; */
+    
+}
+.myOrders{
+    /* background-color: blue; */
+    width: 45vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 20px;
+    /* align-items: center; */
 }
 .myOrders h1, .profile h1{
     font-size: 1.4rem;
@@ -80,6 +91,7 @@
     margin-left: 10px;
     
 }
+
 .table {
     width: 40vw;
     border-radius: 10px;

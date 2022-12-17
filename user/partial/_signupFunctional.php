@@ -17,7 +17,7 @@
         $noOfRows= mysqli_num_rows($result);
 
         if($noOfRows>0){
-            $alert="This Email Id is already used.";
+            $alert="<span class='error'>Error!</span> This Email Id is already used.";
         }
         else {
                 if ($userEmail !="" && $userPass == $confirmPass) {
@@ -29,18 +29,18 @@
                     $insertResult = mysqli_query($conn, $insert);
 
                     if ($insertResult) {
-                        $alert="Your account has been created successfully. You can login now. ";
+                        $alert="<span class='success'>Success!</span> Your account has been created successfully. You can <a href='/FoodFest/account.php>login<a> now. ";
                         // header ("Location:/FoodFest/index.php");
                         // exit();
                         // echo "inserted";
                     }
                     else{
-                        $alert="Some error occured ! Please try again.";
+                        $alert="<span class='error'>Error!</span> Some error occured ! Please try again.";
                     
                     }
                 }
                 else{
-                    $alert="Passwords do not match.";
+                    $alert="<span class='error'>Error!</span> Passwords do not match.";
                 }
         }
         session_start();

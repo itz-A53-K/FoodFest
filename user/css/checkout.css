@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
+    min-height: 92.6vh;
     
 }
 .checkout{
@@ -28,7 +29,7 @@
 .checkout .details label , .checkout .paymentMethod p{
     font-size: 1.1rem;
     font-weight: bold;
-    /* margin-bottom: 5px; */
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
 }
@@ -42,7 +43,7 @@
 }
 
 .details p{
-    padding: 15px;
+    padding: 5px 15px;
     /* overflow-x: scroll; */
     line-break: anywhere;
 }

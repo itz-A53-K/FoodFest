@@ -30,6 +30,7 @@
                         <input type="hidden" name="currentUrl" value="cur">
                         <a href="/FoodFest/admin/home.php"><button type="submit" id="newBtn" class="taskBtn ClickedTaskBtn">New</button></a>
                         <a  href="?btn=preparing"><button type="submit" id="preparing" class="taskBtn">Preparing</button></a>
+                        <a  href="?btn=Out_For_Delivery"><button type="submit" id="Out For Delivery" class="taskBtn">Out for delivery</button></a>
                         <a href="?btn=delivered"><button type="submit" id="delivered" class="taskBtn">Delivered</button></a>
                     </div>
                     <hr>
@@ -40,7 +41,12 @@
                 </section>
 
                 <section class="orderedItem">
-                    <h2>Task Info</h2>
+                    <h2>Task Info</h2>';
+                    if (isset($_GET['taskId'])) {
+                        $taskId=$_GET['taskId'];
+                        echo '<h5>Task : <em>Task #'.$taskId.'</em></h5>';
+                    }
+                    echo'                    
                     <div class="orderedItemList">
                         <div class="table">';
                                 if (isset($_GET['taskId'])) {
@@ -94,13 +100,34 @@
                                     if($row['order_status']=="new"){
                                     echo '
                                     <form action="partial/_acceptOrder.php" method="post">
+                                        <input type="hidden" name="order_status" value="new">
                                         <input type="hidden" name="order_id" value="'.$row['order_id'].'">
                                         <button type="submit" class="acptBtn">Accept order</button>
                                     </form>';
                                     }
-                                    else{
-                                        echo '  <button class="acptedBtn" disabled>Accepted</button>';
+                                    else if($row['order_status']=="Preparing"){
+                                        echo '  
+                                        <form action="partial/_acceptOrder.php" method="post">
+                                            <input type="hidden" name="order_status" value="Preparing">
+                                            <input type="hidden" name="order_id" value="'.$row['order_id'].'">
+                                            <button type="submit" class="acptBtn">Order ready</button>
+                                        </form>';
 
+                                    }
+                                    else if($row['order_status']=="Out for delivery"){
+                                        echo '  
+                                        <form action="partial/_acceptOrder.php" method="post">
+                                            <input type="hidden" name="order_status" value="Out For Delivery">
+                                            <input type="hidden" name="order_id" value="'.$row['order_id'].'">
+                                            <button type="submit" class="acptBtn">Delivered</button>
+                                        </form>';
+
+                                    }
+                                    else{
+                                        echo '<button class="acptedBtn" disabled>Order delivered successfully</button>
+                                        
+                                        <h1 class="testtime"id="testtime"></h1>
+                                        ';
                                     }
                                 }
                             echo '      
@@ -115,8 +142,9 @@
     <script src="/FoodFest/script.js"></script>
     <script src="js/adminLogout.js"></script>
     <script>
-        setTimeout("location.reload(true);", 10000);
+        // setTimeout("location.reload(true);", 10000);
     </script>
+    
 </body>
 
 </html>

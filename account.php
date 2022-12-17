@@ -104,16 +104,9 @@
                                     <h2 id="captcha"></h2>
                                     <!-- <button type="submit">Submit</button> -->
                                 </div>
-                                <?php
-                                if(isset($_SESSION['otp'])){
-                                    echo '
-                                    <button type="submit" class="btnLarge">Signup</button>';
-                                }
-                                else{
-                                    echo'                                
-                                    <input type="button" class="btnLarge" value="Varify email" id="varify" onclick="">';
-                                }
-                                ?>
+                                
+                                <button type="submit" class="btnLarge">Signup</button>
+                                   
                                 <!-- <button type="reset" class="btn">Reset</button> -->
                             </form>
                         </div>

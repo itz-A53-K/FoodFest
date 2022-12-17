@@ -33,12 +33,12 @@ if ($method =='POST') {
                 $_SESSION['userName'] = $row['userName'];
                 $_SESSION['user_id'] = $row['user_id'];
                 // header ("Location:/FoodFest/index.php");
-                $alert="You have loggedin successfully.";
+                $alert="<span class='success'>Success!</span> You have loggedin successfully.";
                 // exit();
                         
         }
         else{
-            $alert="Password do not match.";
+            $alert="<span class='error'>Error!</span> Password do not match.";
         }
         
         
@@ -52,11 +52,11 @@ if ($method =='POST') {
         
     }
     else if($noOfRows<1){
-            $alert="No account found!";
+            $alert="<span class='error'>Error!</span> No account found!";
             
     }
     else{
-        $alert="Some Error Occured ! Please try again after some time.";
+        $alert="<span class='error'>Error!</span> Some Error Occured ! Please try again after some time.";
     }
     session_start();
     $_SESSION['alert']=$alert;

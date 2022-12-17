@@ -35,8 +35,8 @@ body{
     top: 10vh;
     left: 29vw;
     width: 40vw;
-    border: 2px solid rgb(247, 49, 0);
-    background-color: rgb(234, 173, 143);
+    border: 2px solid rgb(234, 155, 135);
+    background-color: rgb(236, 227, 221);
     /* background-color: #7f484d; */
     min-height: 5vh;
     padding: 10px;
@@ -46,9 +46,24 @@ body{
     justify-content: space-between;
 }
 .alert div{
-    font-size: .9rem;
+    font-size: .95rem;
     /* font-family: 'Asap Condensed', sans-serif; */
+    
+}
+.alert div .error{
     font-family: 'Philosopher', sans-serif;
+    color: rgb(116, 14, 14);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+
+}
+.alert div .success{
+    font-family: 'Philosopher', sans-serif;
+    color: rgb(15, 145, 35);
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    font-weight: bold;
 
 }
 .alert .closeAlert{
