@@ -47,7 +47,6 @@
                     $alert="Passwords do not match.";
                 }
         }
-        
         $_SESSION['alert']=$alert;
         header ("Location:/FoodFest/account.php");
     }

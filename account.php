@@ -148,7 +148,11 @@
                                     }
                                     else{
                                         echo'
-                                        <form action="otp_send.php" method="post" class="form" id="RegForm" onsubmit="return regValidate(),validateCaptcha()">
+                                        <form action="otp_send.php" method="post" class="form" id="RegForm" onsubmit="return regValidate(),validateCaptcha()">';
+                                            if(isset($_SESSION['alert'])){
+                                                echo ' <h4 style="color:red;">'.$_SESSION['alert'].'</h4>';
+                                            }
+                                        echo'
                                             <div>
                                                 <input type="email" id="verifyEmail" name="verifyEmail" placeholder="Enter your email" required>
                                             </div>

@@ -29,48 +29,62 @@
 
 		if($_SERVER['REQUEST_METHOD']=="POST") {
 			require 'PHPMailerAutoload.php';
-			//  require 'account.php';
+			include 'user/partial/_dbConnect.php';
 
-			 echo $_POST['verifyEmail'];
-			 $_SESSION['verifyEmail']=$_POST['verifyEmail'];
+			$verifyEmail=$_POST['verifyEmail'];
+			$_SESSION['verifyEmail']=$verifyEmail;
 
-			$mail = new PHPMailer;
-
-			// $mail->SMTPDebug = 4;                               // Enable verbose debug output
-
-			$mail->isSMTP();                                      // Set mailer to use SMTP
-			$mail->Host = 'tls://smtp.gmail.com';  // Specify main and backup SMTP servers
-			$mail->SMTPAuth = true;                               // Enable SMTP authentication
-			$mail->Username = 'gokuui720@gmail.com';                 // SMTP username
-			$mail->Password = 'bshvdcsqcvcysoqs';                           // SMTP password
+			$checkUser= "SELECT * FROM `users` WHERE email='$verifyEmail'";
+			$checkUser_result= mysqli_query($conn,$checkUser);
+	
+			 // checking no of rows 
+			$noOfRows= mysqli_num_rows($checkUser_result);
+	
+			if($noOfRows>0){
+				$alert='"'.$verifyEmail.'" This Email Id is already used.';
+				$_SESSION['alert']=$alert;
+				header('Location:/FoodFest/index.php');
+			}
+			else{
 			
-			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-			$mail->Port = 587;                                    // TCP port to connect to
+				$mail = new PHPMailer;
 
-			$mail->setFrom(EMAIL, 'Dsmart Tutorials');
-			$mail->addAddress($_POST['verifyEmail']);     // Add a recipient or address we want to sent to
+				// $mail->SMTPDebug = 4;                               // Enable verbose debug output
 
-			// $mail->addReplyTo(EMAIL);
-			// print_r($_FILES['file']); exit;
-			// for ($i=0; $i < count($_FILES['file']['tmp_name']) ; $i++) { 
-			// 	$mail->addAttachment($_FILES['file']['tmp_name'][$i], $_FILES['file']['name'][$i]);    // Optional name
-			// }
-			// $mail->isHTML(true);                                  // Set email format to HTML
-				$resultF="Your One Time Password is ".$result." . Please do not share with anybody. ";
-			// $mail->Subject = $_POST['subject'];
-			$mail->Body    = $resultF;
-			// $mail->AltBody = $_POST['message'];
-
-			if(!$mail->send()) {
+				$mail->isSMTP();                                      // Set mailer to use SMTP
+				$mail->Host = 'tls://smtp.gmail.com';  // Specify main and backup SMTP servers
+				$mail->SMTPAuth = true;                               // Enable SMTP authentication
+				$mail->Username = 'gokuui720@gmail.com';                 // SMTP username
+				$mail->Password = 'bshvdcsqcvcysoqs';                           // SMTP password
 				
-				unset($_SESSION['otp']);
-			    echo 'Message could not be sent.';
-			    echo 'Mailer Error: ' . $mail->ErrorInfo;
-			} else {
-				$_SESSION['otpSent']="True";
-			    // echo 'Message has been sent';
-				// header('Location: /FoodFest/account.php?otpSent=1');
-				echo "<script>document.location = 'http://localhost/FoodFest/account.php'</script>";
+				$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+				$mail->Port = 587;                                    // TCP port to connect to
+
+				$mail->setFrom(EMAIL, 'Dsmart Tutorials');
+				$mail->addAddress($_POST['verifyEmail']);     // Add a recipient or address we want to sent to
+
+				// $mail->addReplyTo(EMAIL);
+				// print_r($_FILES['file']); exit;
+				// for ($i=0; $i < count($_FILES['file']['tmp_name']) ; $i++) { 
+				// 	$mail->addAttachment($_FILES['file']['tmp_name'][$i], $_FILES['file']['name'][$i]);    // Optional name
+				// }
+				// $mail->isHTML(true);                                  // Set email format to HTML
+					$resultF="Your One Time Password is ".$result." . Please do not share with anybody. ";
+				// $mail->Subject = $_POST['subject'];
+				$mail->Body    = $resultF;
+				// $mail->AltBody = $_POST['message'];
+
+				if(!$mail->send()) {
+					
+					unset($_SESSION['otp']);
+					echo 'Message could not be sent.';
+					echo 'Mailer Error: ' . $mail->ErrorInfo;
+				} else {
+					$_SESSION['otpSent']="True";
+					// echo 'Message has been sent';
+					// header('Location: /FoodFest/account.php?otpSent=1');
+					echo "<script>document.location = 'http://localhost/FoodFest/account.php'</script>";
+				}
 			}
 		}
 
