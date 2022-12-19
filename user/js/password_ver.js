@@ -1,6 +1,7 @@
 
-var userRegName = document.getElementById("userName");
 var userRegMail = document.getElementById("verifyEmail");
+
+var userRegName = document.getElementById("userName");
 var userRegPass = document.getElementById("userPass");
 var confirmPass = document.getElementById("confirmPass");
 var otp = document.getElementById("otp");

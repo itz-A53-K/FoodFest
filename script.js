@@ -40,6 +40,7 @@ Array.from(moreBtn).forEach((element) =>{
     })
 })
 
+//alert close
 document.querySelector('#closeAlert').addEventListener("click",(e)=>{
     currentUrl=window.location.href;
     cutUrl=currentUrl.slice(0,currentUrl.indexOf('?'));
