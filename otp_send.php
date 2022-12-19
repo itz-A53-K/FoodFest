@@ -29,7 +29,7 @@
 
 		if($_SERVER['REQUEST_METHOD']=="POST") {
 			require 'PHPMailerAutoload.php';
-			 require 'account.php';
+			//  require 'account.php';
 
 			 echo $_POST['verifyEmail'];
 			 $_SESSION['verifyEmail']=$_POST['verifyEmail'];
@@ -67,10 +67,10 @@
 			    echo 'Message could not be sent.';
 			    echo 'Mailer Error: ' . $mail->ErrorInfo;
 			} else {
-				
+				$_SESSION['otpSent']="True";
 			    // echo 'Message has been sent';
 				// header('Location: /FoodFest/account.php?otpSent=1');
-				echo "<script>document.location = 'http://localhost/FoodFest/account.php?otpSent'</script>";
+				echo "<script>document.location = 'http://localhost/FoodFest/account.php'</script>";
 			}
 		}
 

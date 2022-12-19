@@ -34,7 +34,7 @@ body{
     bottom: 2vh;
     top: 10vh;
     left: 29vw;
-    width: 40vw;
+    max-width: 40vw;
     border: 2px solid rgb(247, 49, 0);
     background-color: rgb(234, 173, 143);
     /* background-color: #7f484d; */

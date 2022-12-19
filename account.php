@@ -35,6 +35,9 @@
         </nav>
     </header>
 
+    <?php 
+    // include 'user/partial/_alert.php';
+    ?>
 
     <section class="account">
         <div class="container">
@@ -74,63 +77,97 @@
 
 
                         <div class="signupModule" id="signupModule">
-                            <form action="user/partial/_signupFunctional.php" method="post" class="form" id="RegForm"
-                                onsubmit="return regValidate(),validateCaptcha()">
-                                <!-- <h4>Signup</h4> -->
-                                <div>
-                                    <!-- <label for="userName">User Name :</label> -->
-                                    <input type="text" id="userName" name="userName" placeholder="User Name"
-                                        maxlength="10">
-                                </div>
-                                <div>
-                                    <!-- <label for="userEmail">Email :</label> -->
-                                    <?php
-                                    if(isset($_SESSION['otpVarified'])&& $_SESSION['otpVarified']=="TRUE"){
-                                        echo '<input type="email" class="userEmail" name="userEmail" value="'.$_SESSION['verifyEmail'].'"  disabled>';
+                            <?php
+                                if(isset($_SESSION['otpVarified'])&& $_SESSION['otpVarified']=="TRUE"){
+                                    echo'
+                                        <form action="user/partial/_signupFunctional.php" method="post" class="form" id="RegForm" onsubmit="return regValidate(),validateCaptcha()">';
+                                            if(isset($_SESSION['alert']) && $_SESSION['alert']=="Email varified."){
+                                                echo ' <h4 style="color:green;">'.$_SESSION['alert'].'</h4>';
+                                            }
+                                            else if(isset($_SESSION['alert'])){
+                                                echo ' <h4 style="color:red;">'.$_SESSION['alert'].'</h4>';
+                                            }
+                                        echo'
+                                            <div>
+                                                
+                                                <!-- <label for="userEmail">Email :</label> -->
+                                                <input type="" value="'.$_SESSION['verifyEmail'].'" disabled>
+                                                <input type="hidden" class="userEmail" name="userEmail" value="'.$_SESSION['verifyEmail'].'" >
+                                            </div>
+                                            <div>
+                                                <!-- <label for="userName">User Name :</label> -->
+                                                <input type="text" id="userName" name="userName" placeholder="User Name"
+                                                    maxlength="10">
+                                            </div>
+                                            
+
+                                            <div>
+                                                <!-- <label for="userPass">Password :</label> -->
+                                                <input type="password" id="userPass" name="userPass" placeholder="Password">
+
+                                            </div>
+                                            <div>
+                                                <!-- <label for="confirmPass">Confirm Password :</label> -->
+                                                <input type="password" id="confirmPass" name="confirmPass"
+                                                    placeholder="Confirm Password">
+                                            </div>
+                                            <div id="captchaDiv">
+                                                <!-- captcha creation -->
+                                                <!-- <div id="captcha">
+                                                </div> -->
+                                                <input type="text" placeholder="Captcha" id="cpatchaTextBox">
+                                                <h2 id="captcha"></h2>
+                                                <!-- <button type="submit">Submit</button> -->
+                                            </div>
+                                            <button type="submit" class="btnLarge">Signup</button>
+                                        </form>
+                                    ';
+                                }
+                                else{
+                                    if(isset($_SESSION['otpSent'])&& $_SESSION['otpSent']=="True"){
+                                        // <button type="" class="btnLarge" disabled>Send a OTP</button>
+                                        echo'
+                                        <form action="/FoodFest/user/partial/_otp_varify.php" method="post" class="form" id="RegForm" onsubmit="return regValidate(),validateCaptcha()">';
+                                            if(isset($_SESSION['alert'])){
+                                                echo ' <h4 style="color:red;">'.$_SESSION['alert'].'</h4>';
+                                            }
+                                        echo'
+                                            <div>
+                                                <input type="email" class="verifyEmail" name="verifyEmail" placeholder="Enter your email" value="'.$_SESSION['verifyEmail'].'" disabled>
+                                            </div>
+                                            <div>
+                                                <h4 style="color:green;">An OTP has been sent to above Email</h4>
+                                            </div>
+                                            <div>
+                                                <input type="text" id="otp" name="otp" placeholder="Enter OTP" maxlength="4">
+                                            </div>
+                                            
+                                            <button type="submit" class="btnLarge">Varify OTP</button>
+                                        </form>
+                                        ';
                                     }
                                     else{
                                         echo'
-                                        <input type="email" class="userEmail" name="userEmail" placeholder="Email">';
-
+                                        <form action="otp_send.php" method="post" class="form" id="RegForm" onsubmit="return regValidate(),validateCaptcha()">
+                                            <div>
+                                                <input type="email" id="verifyEmail" name="verifyEmail" placeholder="Enter your email" required>
+                                            </div>
+                                            <div id="captchaDiv">
+                                                <!-- captcha creation -->
+                                                <!-- <div id="captcha">
+                                                </div> -->
+                                                <input type="text" placeholder="Captcha" id="cpatchaTextBox" required>
+                                                <h2 id="captcha"></h2>
+                                                <!-- <button type="submit">Submit</button> -->
+                                            </div>
+                                            <button type="submit" class="btnLarge">Varify Email</button>
+                                        </form>
+                                        ';
                                     }
-                                    ?>
-                                </div>
-                                <div>
-                                    <!-- <label for="userPass">Password :</label> -->
-                                    <input type="password" id="userPass" name="userPass" placeholder="Password">
-
-                                </div>
-                                <div>
-                                    <!-- <label for="confirmPass">Confirm Password :</label> -->
-                                    <input type="password" id="confirmPass" name="confirmPass"
-                                        placeholder="Confirm Password">
-                                </div>
-                                <div id="captchaDiv">
-                                    <!-- captcha creation -->
-                                    <!-- <div id="captcha">
-                                    </div> -->
-                                    <input type="text" placeholder="Captcha" id="cpatchaTextBox">
-                                    <h2 id="captcha"></h2>
-                                    <!-- <button type="submit">Submit</button> -->
-                                </div>
-                                <?php
-                                if(isset($_SESSION['otpVarified'])&& $_SESSION['otpVarified']=="TRUE"){
-                                    echo '
-                                    <button type="submit" class="btnLarge">Signup</button>';
+                                
                                 }
-                                ?>
-                                </form>
-                                <?php
-                                if(!isset($_SESSION['otpVarified'])){
-                                    echo'                                
-                                    <form action="otp_send.php" method="post" class="formVarify">
-                                    <input type="hidden" id="verifyEmail" name="verifyEmail">
-                                    <input type="submit" class="btnLarge" value="Verify email" id="verify" >
-                                    </form>
-                                    ';
-                                }
-                                ?>
-                                <!-- <button type="reset" class="btn">Reset</button> -->
+                            ?>
+                                
                         </div>
 
                         <form action="admin/partial/_adminLoginFunctional.php" method="post" class="form" id="AdminForm" >

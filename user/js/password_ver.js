@@ -1,14 +1,15 @@
 
 var userRegName = document.getElementById("userName");
-var userRegMail = document.getElementById("userEmail");
+var userRegMail = document.getElementById("verifyEmail");
 var userRegPass = document.getElementById("userPass");
 var confirmPass = document.getElementById("confirmPass");
+var otp = document.getElementById("otp");
 var code;
 
 function regValidate()
 {
     var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
-    if (userRegName.value==""|| userRegMail.value==""||userRegPass.value=="" ) {
+    if (userRegName.value==""|| userRegMail.value==""||userRegPass.value=="" || otp.value=="") {
         alert('Please fill all the fields')
         return false;
     }

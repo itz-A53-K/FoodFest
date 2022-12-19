@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $method= $_SERVER['REQUEST_METHOD'];
 
     if ($method=='POST') {
@@ -8,7 +9,7 @@
         $userEmail= $_POST['userEmail'];
         $userPass= $_POST['userPass'];
         $confirmPass= $_POST['confirmPass'];
-
+        
         //fatching user details from db
         $checkUser= "SELECT * FROM `users` WHERE email='$userEmail'";
         $result= mysqli_query($conn,$checkUser);
@@ -29,10 +30,13 @@
                     $insertResult = mysqli_query($conn, $insert);
 
                     if ($insertResult) {
-                        $alert="Your account has been created successfully. You can login now. ";
-                        // header ("Location:/FoodFest/index.php");
-                        // exit();
-                        // echo "inserted";
+                        $alert="Your account has been created successfully. You can <a href='/FoodFest/account.php'>login</a> now. ";
+                        unset($_SESSION['otpSent']);
+                        unset($_SESSION['otpVarified']);
+
+                        $_SESSION['alert']=$alert;
+                        header ("Location:/FoodFest/index.php");
+                        exit();
                     }
                     else{
                         $alert="Some error occured ! Please try again.";
@@ -43,8 +47,8 @@
                     $alert="Passwords do not match.";
                 }
         }
-        session_start();
+        
         $_SESSION['alert']=$alert;
-        header ("Location:/FoodFest/index.php");
+        header ("Location:/FoodFest/account.php");
     }
 ?>
