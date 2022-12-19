@@ -130,6 +130,7 @@ form a {
     font-style: italic;
     height: 5vh;
     letter-spacing: 5px;
+    user-select: none;
 
 }
 
@@ -150,6 +151,7 @@ form a {
     font-size: 1.1rem;
     margin-top: 10px ;
     width: 100px;
+    user-select: none;
 }
 #captchaDiv input{
    width: 6.5vw;

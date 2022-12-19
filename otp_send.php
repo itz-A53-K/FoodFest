@@ -69,7 +69,7 @@
 				// 	$mail->addAttachment($_FILES['file']['tmp_name'][$i], $_FILES['file']['name'][$i]);    // Optional name
 				// }
 				// $mail->isHTML(true);                                  // Set email format to HTML
-					$resultF="Your One Time Password is ".$result." . Please do not share with anybody. ";
+					$resultF="Your One Time Password for FoodFest app is ".$result." . Please do not share with anybody. ";
 				// $mail->Subject = $_POST['subject'];
 				$mail->Body    = $resultF;
 				// $mail->AltBody = $_POST['message'];
