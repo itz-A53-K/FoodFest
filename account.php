@@ -215,7 +215,7 @@
 
     <!-- <footer>
         <h1>Copyright &copy; FoodFest.com</h1>
-        <p>Prepared by: Abinash, Samir.</p>
+        <p>Designed & developed by: Abinash, Samir.</p>
     </footer> -->
 
 
@@ -223,12 +223,7 @@
     <script src="user/js/password_ver.js"></script>
     <script src="user/js/loginDesign.js"></script>
     <script src="script.js"></script>
-    <script>
-        if(/otpSent/.test(window.location.href)){
-            // console.log("preparing");
-            document.querySelector('.varification').classList.remove('hidden');
-        }
-</script>
+    
 </body>
 
 </html>

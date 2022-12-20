@@ -183,7 +183,7 @@
     
     <!-- <footer>
         <h1>Copyright &copy; FoodFest.com</h1>
-        <p>Prepared by: Abinash, Samir.</p>
+        <p>Designed & developed by: Abinash, Samir.</p>
     </footer> -->
     <script src="/FoodFest/script.js"></script>
     <script src="js/logout.js"></script>
