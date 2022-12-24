@@ -43,7 +43,6 @@ function regValidate()
 function createCaptcha() 
 {
     //clear the contents of captcha div first 
-    // document.getElementById('captcha1').innerHTML = "";
     document.getElementById('captcha').innerHTML = "";
     var charsArray =
     // "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%&";

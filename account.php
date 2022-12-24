@@ -164,7 +164,7 @@
                                                 <h2 id="captcha"></h2>
                                                 <!-- <button type="submit">Submit</button> -->
                                             </div>
-                                            <button type="submit" class="btnLarge">Varify Email</button>
+                                            <button type="submit" class="btnLarge">Send OTP</button>
                                         </form>
                                         ';
                                     }
