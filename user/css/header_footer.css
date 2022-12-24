@@ -85,10 +85,9 @@
     margin-right: 4px;
     cursor: pointer;
 }
-.navContainerRight .listItem label:hover{
-    /* background-color:rgb(221, 140, 10); */
-    
-}
+/* .navContainerRight .listItem label:hover{
+    background-color:rgb(221, 140, 10);  
+} */
 .navContainerRight .itemLink {
     font-family: 'Indie Flower', cursive;
     cursor: pointer;
