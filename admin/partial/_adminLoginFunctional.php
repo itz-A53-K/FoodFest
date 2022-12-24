@@ -36,27 +36,21 @@ if ($method =='POST') {
                 $_SESSION['adminUser_id'] = $row['admin_id'];
                 header ("Location:/FoodFest/admin/home.php");
                 exit();
-                // echo 'hgfg';
             }
                         
         }
         else{
-            echo 'not verified';
+            $alert= 'Password do not match';
         }
-        
-        
-        // if(isset($_COOKIE["loggedin"])){
-        //     header ("Location:/FoodFest/index.php");
-        // }
-        // else{
-        //     echo "\nkjdnfklsdf";
-        // }
         
         
     }
     else{
-    echo '<1';
+    $alert= 'Can\'t Login, some error occured. Please try again .';
     }
+    session_start();
+    $_SESSION['alert']=$alert;
+    header ("Location:/FoodFest/index.php");
 }
 
 ?>

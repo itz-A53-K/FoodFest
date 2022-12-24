@@ -80,7 +80,7 @@
                             <?php
                                 if(isset($_SESSION['otpVarified'])&& $_SESSION['otpVarified']=="TRUE"){
                                     echo'
-                                        <form action="user/partial/_signupFunctional.php" method="post" class="form" id="RegForm" onsubmit="return regValidate(),validateCaptcha()">';
+                                        <form action="user/partial/_signupFunctional.php" method="post" class="form" id="RegForm" onsubmit="return validateCaptcha()">';
                                             if(isset($_SESSION['alert']) && $_SESSION['alert']=="Email varified."){
                                                 echo ' <h4 style="color:green;">'.$_SESSION['alert'].'</h4>';
                                             }
@@ -125,9 +125,8 @@
                                 }
                                 else{
                                     if(isset($_SESSION['otpSent'])&& $_SESSION['otpSent']=="True"){
-                                        // <button type="" class="btnLarge" disabled>Send a OTP</button>
                                         echo'
-                                        <form action="/FoodFest/user/partial/_otp_varify.php" method="post" class="form" id="RegForm" onsubmit="return regValidate(),validateCaptcha()">';
+                                        <form action="/FoodFest/user/partial/_otp_varify.php" method="post" class="form" id="RegForm" onsubmit="return otpValidate()">';
                                             if(isset($_SESSION['alert'])){
                                                 echo ' <h4 style="color:red;">'.$_SESSION['alert'].'</h4>';
                                             }
@@ -148,7 +147,7 @@
                                     }
                                     else{
                                         echo'
-                                        <form action="otp_send.php" method="post" class="form" id="RegForm" onsubmit="return regValidate(),validateCaptcha()">';
+                                        <form action="otp_send.php" method="post" class="form" id="RegForm" onsubmit="return validate_reg_cpatchaBox1()">';
                                             if(isset($_SESSION['alert'])){
                                                 echo ' <h4 style="color:red;">'.$_SESSION['alert'].'</h4>';
                                             }
@@ -160,7 +159,7 @@
                                                 <!-- captcha creation -->
                                                 <!-- <div id="captcha">
                                                 </div> -->
-                                                <input type="text" placeholder="Captcha" id="cpatchaTextBox" required>
+                                                <input type="text" placeholder="Captcha" id="reg_captchaBox1" required>
                                                 <h2 id="captcha"></h2>
                                                 <!-- <button type="submit">Submit</button> -->
                                             </div>
