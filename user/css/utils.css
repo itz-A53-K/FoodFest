@@ -30,11 +30,11 @@ body{
 }
 .alert{
     position: sticky;
-    /* position: fixed; */
     bottom: 2vh;
     top: 10vh;
     left: 29vw;
     max-width: 40vw;
+    min-width: 25vw;
     border: 2px solid rgb(247, 49, 0);
     background-color: rgb(234, 173, 143);
     /* background-color: #7f484d; */
@@ -51,8 +51,16 @@ body{
     font-family: 'Philosopher', sans-serif;
 
 }
-.alert div a:hover{
+.alert div a{
+    color: rgb(212, 0, 255);
+    font-size: 1rem;
     text-decoration: underline;
+    transition: .2s ease-in;
+
+}
+.alert div a:hover{
+    color: blue;
+    text-decoration: none;
 
 }
 .alert .closeAlert{

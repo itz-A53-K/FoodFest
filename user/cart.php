@@ -17,7 +17,10 @@
     include 'partial/_header.php';
     
         if(!isset($_SESSION['loggedin']) && $_SESSION['loggedin']!='true'){
-            header("Location:/FoodFest/account.php");
+            $alert='Please <a href="/FoodFest/account.php"> login</a> first.';
+            session_start();
+            $_SESSION['alert']=$alert;
+            header("Location:/FoodFest/index.php");
         }
         else{
             echo '

@@ -28,8 +28,8 @@
             <div class="navContainerRight">
                 <ul>
                     <li class="listItem"><a class="itemLink" href="/FoodFest/index.php">Home</a></li>
-                    <li class="listItem"><a class="itemLink" href="#">About</a></li>
-                    <li class="listItem"><a class="itemLink" href="/FoodFest/user/cart.php">Cart</a></li>
+                    <!-- <li class="listItem"><a class="itemLink" href="#">About</a></li>
+                    <li class="listItem"><a class="itemLink" href="/FoodFest/user/cart.php">Cart</a></li> -->
                 </ul>
             </div>
         </nav>

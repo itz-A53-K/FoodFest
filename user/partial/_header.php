@@ -30,7 +30,8 @@ if(session_status() != PHP_SESSION_ACTIVE){
                         <li class="listItem">
                             <a class="itemLink" href="/FoodFest/user/food_Item.php">Food Items</a>
                         </li>
-                        <li class="listItem">';
+                        <li class="listItem">
+                ';
                         include '_dbConnect.php';
                         $user_id=$_SESSION['user_id'];
                         $sql="SELECT * FROM `cart` WHERE user_id=$user_id";
@@ -41,7 +42,7 @@ if(session_status() != PHP_SESSION_ACTIVE){
                             <a href="/FoodFest/user/cart.php"><label for="Cart">'.$noOfRows.'</label></a>
                             ';
                         }
-                        echo '
+                echo '
                         <a class="itemLink" id ="cart" href="/FoodFest/user/cart.php">Cart</a>
                         </li>
                         <li class="listItem" style="margin:0 ;">
@@ -53,8 +54,6 @@ if(session_status() != PHP_SESSION_ACTIVE){
                         <button class="headerBtn logoutBtn">Logout</button>
                         
                     </ul>
-
-                    
                 ';
             }
             else{
