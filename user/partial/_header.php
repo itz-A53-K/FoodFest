@@ -46,7 +46,7 @@ if(session_status() != PHP_SESSION_ACTIVE){
                             <a class="itemLink" href="/FoodFest/user/profile.php"><img src="/FoodFest/img/user_profile.png" alt="" srcset="" style="width:50px;"></a>
                         </li>
 
-                        <h2>Hey&nbsp; <em>'.$_SESSION['userName'].'</em></a></h2>
+                        <h2>Hi&nbsp; <em>'.$_SESSION['userName'].'</em></a></h2>
                         
                         <button class="headerBtn logoutBtn">Logout</button>
                         
