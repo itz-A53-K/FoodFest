@@ -25,9 +25,6 @@ if(session_status() != PHP_SESSION_ACTIVE){
                             <a class="itemLink" href="/FoodFest/index.php">Home</a>
                         </li>
                         <li class="listItem">
-                            <a class="itemLink" href="#">About</a>
-                        </li>
-                        <li class="listItem">
                             <a class="itemLink" href="/FoodFest/user/food_Item.php">Food Items</a>
                         </li>
                         <li class="listItem">
@@ -61,9 +58,6 @@ if(session_status() != PHP_SESSION_ACTIVE){
                     <ul>
                         <li class="listItem">
                             <a class="itemLink" href="/FoodFest/index.php">Home</a>
-                        </li>
-                        <li class="listItem">
-                            <a class="itemLink" href="#">About</a>
                         </li>
                         <li class="listItem">
                             <a class="itemLink" href="/FoodFest/user/food_Item.php">Food Items</a>
