@@ -70,7 +70,7 @@ body{
 .activePage{
     /* active page link css */
     color: #ff004c;
-    /* transition: .22s ease-in; */
+    /* transition: .2s ease-in; */
 }
 .activePage::after{
     content: " ";
@@ -102,7 +102,6 @@ body{
     border: 1px solid rgb(255, 157, 0);
 }
 .btnDisable{
-    
     align-self: flex-end;
     background-color: rgba(0, 0, 0, 0.18);
     color: rgb(54, 53, 53);
@@ -115,6 +114,7 @@ body{
     outline: none;
     transition: .2s ease-in;
     cursor: pointer;
+    user-select: none;
     
 }
 
