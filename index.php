@@ -13,6 +13,7 @@
 
 <body>
     <?php 
+    unset($_SESSION['alert']);
     include 'user/partial/_header.php';
     include 'user/partial/_dbConnect.php';
     ?>

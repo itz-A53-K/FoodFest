@@ -70,7 +70,7 @@
 				// }
 				// $mail->isHTML(true);                                  // Set email format to HTML
 				$resultF="Hi, Your One Time Password(OTP) for registration on FoodFest app is ".$result.". Please do not share this with anybody. ";
-				$mail->Subject = "FoodFest: Varify Your Email for FoodFest Registration!";
+				$mail->Subject = "FoodFest: Verify Your Email for FoodFest Registration!";
 				$mail->Body    = $resultF;
 				// $mail->AltBody = "$_POST['message']";
 

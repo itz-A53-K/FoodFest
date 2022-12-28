@@ -141,7 +141,7 @@
                                                 <input type="text" id="otp" name="otp" placeholder="Enter OTP" maxlength="4">
                                             </div>
                                             
-                                            <button type="submit" class="btnLarge">Varify OTP</button>
+                                            <button type="submit" class="btnLarge">Verify OTP</button>
                                         </form>
                                         ';
                                     }
