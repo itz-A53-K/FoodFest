@@ -201,7 +201,7 @@
     <script src="/FoodFest/script.js"></script>
     <script src="js/logout.js"></script>
     <script>
-        setTimeout("location.reload(true);", 15000);
+        // setTimeout("location.reload(true);", 15000);
     </script>
 </body>
 

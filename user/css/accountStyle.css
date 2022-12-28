@@ -1,5 +1,5 @@
 .account {
-    margin-top: 7vh ;
+    margin-top: 7vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,6 +34,7 @@
 .form-btn {
     display: inline-block;
 }
+
 .form-btn span {
     color: rgb(30, 28, 28);
 }
@@ -57,7 +58,8 @@
     outline: none;
     font-size: .95rem;
 }
-.account .inpEmail  {
+
+.account .inpEmail {
     /* width: 80%; */
     height: 40px;
     margin: 10px 0;
@@ -141,30 +143,34 @@ form a {
     height: 5vh;
     letter-spacing: 5px;
 }
-#captchaDiv{
+
+#captchaDiv {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
 }
-#captchaDiv h2{
+
+#captchaDiv h2 {
     font-size: 1.1rem;
-    margin-top: 10px ;
+    margin-top: 10px;
     width: 100px;
     user-select: none;
 }
-#captchaDiv input{
-   width: 6.5vw;
-   /* margin-left: 17px; */
+
+#captchaDiv input {
+    width: 6.5vw;
+    /* margin-left: 17px; */
 }
 
 
-.varification form{
+.varification form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 20vw;
 }
+
 .varification {
     width: 100vw;
     position: fixed;
@@ -174,4 +180,3 @@ form a {
     justify-content: center;
     align-items: center;
 }
-

@@ -1,44 +1,154 @@
-.homeBody{
+.homeBody {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100vw;
     min-height: 100vh;
 }
-.foodCategory{
+
+.foodCategory {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 15vh;
-    width: 45vw;
-}
-.foodCategory h3{
-    align-self: start;
-    font-size: 1.8rem;
-    font-weight: 600;
-    
+    width: 60vw;
 }
 
-.categories{
+h3 {
+    align-self: start;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Kalam', cursive;
+}
+
+.categories {
     display: flex;
     margin: 20px;
 }
 
-.categoryItem{
+.categoryItem {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 3vw;
 }
-.categoryItem img{
+
+.categoryItem img {
     height: 160px;
     width: 160px;
     border-radius: 80px;
     border: 1px solid rgba(65, 83, 75, 0.598);
 }
-.categoryItem .foodName{
+
+.categoryItem .foodName {
     font-size: 1.2rem;
     text-decoration: none;
     font-weight: 500;
     color: black;
+}
+
+
+.popular {
+    /* background: rgba(135, 127, 127, 0.46); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15vh;
+    width: 60vw;
+}
+
+.popular .header {
+    /* background: rgba(135, 127, 127, 0.46); */
+    display: flex;
+    align-self: start;
+}
+
+.popular .seeAll {
+    padding: 5px 20px;
+    margin: 0 15px;
+    background: linear-gradient(100deg, rgba(4, 74, 224, 0.9), rgba(255, 0, 238, 0.739));
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.popular .seeAll:hover {
+    border: 2px solid rgba(255, 166, 0, 0.793);
+    background: linear-gradient(100deg, rgba(255, 0, 238, 0.739), rgba(4, 74, 224, 0.9));
+
+}
+
+.popular .seeAll a {
+    font-size: .9rem;
+    color: white;
+}
+
+.popularItems {
+    /* background: rgba(135, 127, 127, 0.46); */
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+}
+
+.popularItems a {
+    cursor: pointer;
+    color: black;
+}
+
+.item_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin: 15px;
+    /* border: 1px solid gray; */
+    border-radius: 10px;
+    width: 16vw;
+    height: 45vh;
+}
+
+.item_card:hover {
+    box-shadow: 0px 0px 5px 5px gray;
+}
+
+.item_card img {
+    width: 250px;
+    height: 200px;
+    border-radius: 10px;
+
+}
+
+.item_card .desc {
+    padding: 5px;
+    margin-top: 5px;
+    /* font-family: 'Great Vibes', cursive; */
+    font-family: 'Kalam', cursive;
+}
+
+.item_card .desc p {
+    padding: 5px;
+    font-size: .9rem;
+    font-family: 'Philosopher', sans-serif;
+}
+
+
+
+
+
+.about {
+    width: 60vw;
+    margin-top: 15vh;
+}
+
+.about div {
+    margin: 20px;
+    /* align-self: start; */
+    /* font-size: 1.1rem; */
+    /* font-weight: 600; */
+}
+
+.about p {
+    margin: 10px;
+    font-size: 1.1rem;
 }

@@ -1,15 +1,16 @@
-.cartContainer{
+.cartContainer {
     margin: 15vh 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 62.6vh;
 }
-.cartContainer h1{
+
+.cartContainer h1 {
     font-size: 1.5rem;
 }
 
-.table{
+.table {
     width: 40vw;
     border-radius: 10px;
     background-color: rgba(237, 234, 242, 0.321);
@@ -22,7 +23,7 @@
     align-items: center;
 }
 
-.table .cartItems{
+.table .cartItems {
     min-height: 5vh;
     /* width: fit-content; */
     width: 40vw;
@@ -36,24 +37,27 @@
 .table .cartItems .cartItem_Left {
     width: 25vw;
 }
-.table .cartItems .cartItem_Left h4{
+
+.table .cartItems .cartItem_Left h4 {
     margin-right: 15px;
     /* overflow-x: scroll; */
     line-break: anywhere;
     width: auto;
 }
-.table .cartItems .cartItem_Right{
+
+.table .cartItems .cartItem_Right {
     width: 15vw;
     display: flex;
     justify-content: space-between;
 }
 
-.table .billDetails{
+.table .billDetails {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-.table .billDetails h2{
+
+.table .billDetails h2 {
     display: flex;
     justify-content: start;
     margin-top: 5vh;
@@ -61,30 +65,34 @@
     font-size: 1.2rem;
     text-decoration: underline;
 }
-.table .billDetails .row{
+
+.table .billDetails .row {
     margin: 13px 10px;
     display: flex;
     justify-content: space-between;
 }
- 
-.table .grandTotal div{
+
+.table .grandTotal div {
     font-size: 1.4rem;
     font-weight: 600;
 }
-.table .saveAddress{
+
+.table .saveAddress {
     width: 35vw;
     margin: 2vh 0;
     display: flex;
     flex-direction: column;
-    padding: 10px ;
+    padding: 10px;
     background-color: rgb(210, 182, 182);
     border-radius: 15px;
 }
-.table .saveAddress label{
+
+.table .saveAddress label {
     font-size: 1.1rem;
     padding: 0 5px;
 }
-.table .saveAddress textarea{
+
+.table .saveAddress textarea {
     padding: 15px;
     font-size: .85rem;
     margin: 10px 0;
@@ -92,16 +100,17 @@
     outline: none;
     border-radius: 10px;
 }
-.table .saveAddress input{
+
+.table .saveAddress input {
     padding: 10px;
     font-size: .85rem;
     margin: 10px 0;
     outline: none;
     border-radius: 10px;
-    
+
 }
 
-.checkoutDisable{
+.checkoutDisable {
     background-color: rgba(0, 0, 0, 0.18);
     color: rgb(54, 53, 53);
     font-size: .85rem;
@@ -112,20 +121,22 @@
     border-radius: 10px;
     /* cursor: pointer; */
 }
-.checkoutBtn{
-    margin: 10px ;
-    width: 100%;
+
+.checkoutBtn {
+    margin: 10px;
+    /* width: 100%; */
     color: white;
     background-color: violet;
     font-size: .9rem;
     outline: none;
     cursor: pointer;
-    padding: 10px 50px ;
+    padding: 10px 50px;
     border: 2px solid white;
     border-radius: 15px;
     transition: .2s ease-out;
 }
-.checkoutBtn:hover{
+
+.checkoutBtn:hover {
     border: 2px solid violet;
 
 }

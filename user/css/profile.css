@@ -1,4 +1,4 @@
-.body2{
+.body2 {
     width: 98vw;
     min-height: 85vh;
     margin-top: 8vh;
@@ -6,11 +6,12 @@
     flex-direction: column;
     align-items: center;
 }
-.hidden{
+
+.hidden {
     display: none;
 }
 
-.more{
+.more {
     width: fit-content;
     padding: 4px;
     border-radius: 5px;
@@ -20,32 +21,38 @@
     font-size: .8rem;
     background-color: transparent;
 }
-.profile{
+
+.profile {
     width: 45vw;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     /* background-color: aqua; */
     padding: 20px;
     margin-top: 5vh;
 }
-.profile img{
+
+.profile img {
     height: 180px;
     width: 200px;
 }
-.profile .profileCard{
+
+.profile .profileCard {
     box-shadow: 0px 0px 5px 3px rgba(212, 211, 211, 0.654);
     background-color: rgba(246, 246, 241, 0.586);
     border-radius: 15px;
     padding: 10px;
     margin: 10px;
 }
-.profile h2, .profile h2 em{
+
+.profile h2,
+.profile h2 em {
     font-size: 1.3rem;
     margin: 4px;
     line-break: anywhere;
 }
-.myOrders{
+
+.myOrders {
     /* background-color: blue; */
     width: 45vw;
     min-height: 50vh;
@@ -53,9 +60,10 @@
     flex-direction: column;
     padding: 20px;
     /* align-items: center; */
-    
+
 }
-.myOrders{
+
+.myOrders {
     /* background-color: blue; */
     width: 45vw;
     height: fit-content;
@@ -65,7 +73,9 @@
     margin-bottom: 20px;
     /* align-items: center; */
 }
-.myOrders h1, .profile h1{
+
+.myOrders h1,
+.profile h1 {
     font-size: 1.4rem;
     margin: 10px;
     margin-left: -10px;
@@ -73,49 +83,55 @@
     flex-direction: column;
     align-self: start;
 }
-.orderCard{
+
+.orderCard {
     width: 42vw;
-    
+
     border: 2px solid violet;
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
-    
+
 }
-.orderCard .order{
+
+.orderCard .order {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
-}
-.orderCard .order p{
-    margin-left: 10px;
-    
+
 }
 
-.feedbackDiv{
+.orderCard .order p {
+    margin-left: 10px;
+
+}
+
+.feedbackDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15px ;
+    margin: 15px;
 }
-.feedbackDiv label{
+
+.feedbackDiv label {
     display: flex;
     align-self: flex-start;
-    margin-top: 15px ;
+    margin-top: 15px;
     font-weight: bold;
 }
-.feedbackDiv textarea{
+
+.feedbackDiv textarea {
     border-radius: 5px;
     width: 37vw;
     height: 15vh;
     font-size: .8rem;
     padding: 10px;
     margin: 5px;
-    
+
 }
-.feedbackDiv .button{
-    background: linear-gradient(100deg, rgb(36, 132, 191) ,rgba(162, 40, 203, 0.554) , rgb(219, 25, 158));
+
+.feedbackDiv .button {
+    background: linear-gradient(100deg, rgb(36, 132, 191), rgba(162, 40, 203, 0.554), rgb(219, 25, 158));
     padding: 8px 20px;
     border: none;
     border-radius: 10px;
@@ -123,8 +139,9 @@
     font-size: .9rem;
     cursor: pointer;
 }
-.feedbackDiv .button:hover{
-    background: linear-gradient(100deg, rgb(219, 25, 158), rgb(36, 132, 191) );
+
+.feedbackDiv .button:hover {
+    background: linear-gradient(100deg, rgb(219, 25, 158), rgb(36, 132, 191));
     padding: 8px 20px;
     border: none;
     border-radius: 10px;
@@ -142,7 +159,8 @@
     flex-direction: column;
     align-items: center;
 }
-.cartItems{
+
+.cartItems {
     min-height: 5vh;
     width: 40vw;
     display: flex;
@@ -150,39 +168,45 @@
     border-bottom: 1px solid rgba(128, 128, 128, 0.606);
     padding: 2px;
 }
-.cartItems .cartItem_Left{
+
+.cartItems .cartItem_Left {
     margin: 0;
     margin-right: 15px;
     line-break: anywhere;
     width: 25vw;
-    
+
 }
-.cartItems .cartItem_Left h4{
+
+.cartItems .cartItem_Left h4 {
     margin: 0;
 }
+
 .table .cartItems .cartItem_Right {
     width: 15vw;
     display: flex;
     justify-content: space-between;
 }
 
-.billDetails{
+.billDetails {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-.billDetails h2{
+
+.billDetails h2 {
     font-size: .9rem;
     margin: 15px;
     margin-left: -5px;
     text-decoration: underline;
 }
-.billDetails .row{
+
+.billDetails .row {
     height: 20px;
     margin: 3px 5px;
     display: flex;
     justify-content: space-between;
 }
-.billDetails .row h4{
+
+.billDetails .row h4 {
     margin: 0px;
 }
