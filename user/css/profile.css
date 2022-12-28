@@ -1,7 +1,7 @@
 .body2{
     width: 98vw;
     min-height: 85vh;
-    margin-top: 15vh;
+    margin-top: 8vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,6 +27,7 @@
     align-items: center; 
     /* background-color: aqua; */
     padding: 20px;
+    margin-top: 5vh;
 }
 .profile img{
     height: 180px;
@@ -90,6 +91,44 @@
 .orderCard .order p{
     margin-left: 10px;
     
+}
+
+.feedbackDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px ;
+}
+.feedbackDiv label{
+    display: flex;
+    align-self: flex-start;
+    margin-top: 15px ;
+    font-weight: bold;
+}
+.feedbackDiv textarea{
+    border-radius: 5px;
+    width: 37vw;
+    height: 15vh;
+    font-size: .8rem;
+    padding: 10px;
+    margin: 5px;
+    
+}
+.feedbackDiv .button{
+    background: linear-gradient(100deg, rgb(36, 132, 191) ,rgba(162, 40, 203, 0.554) , rgb(219, 25, 158));
+    padding: 8px 20px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: .9rem;
+    cursor: pointer;
+}
+.feedbackDiv .button:hover{
+    background: linear-gradient(100deg, rgb(219, 25, 158), rgb(36, 132, 191) );
+    padding: 8px 20px;
+    border: none;
+    border-radius: 10px;
+    color: white;
 }
 
 .table {

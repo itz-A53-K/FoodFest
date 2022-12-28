@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,9 @@
     <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/header_footer.css">
 </head>
+
 <body>
     <?php
-        session_start();
         include 'partial/_dbConnect.php';
         include 'partial/_header.php';
         $user_id=$_SESSION['user_id'];
@@ -22,7 +23,11 @@
         }
         else{
             echo '
-            <div class="body2">
+            <div class="body2">';
+
+            include 'partial/_alert.php';
+            
+            echo '
                 <section class="profile">
                     <h1>Profile</h1>
                     <div class="img"> <img src="/FoodFest/img/userProfile.png" alt="" srcset=""></div>
@@ -72,9 +77,23 @@
                                         <p>Date:  '.substr($row['order_time'],0,10).'</p>
                                         <p>Status:  <b>'.$orderStatus.'</b></p>
                                     </div>    
-                                    <button class="more"id="'.$row['order_id'].'">></button>
-                                </div>
-
+                                    <button class="more" id="'.$row['order_id'].'">></button>
+                                </div>';
+                            if($row['order_status']=="Delivered") {
+                                if($row['feedback']==""){
+                                    echo '
+                                    <form class="feedbackDiv" method="post" action="partial/_feedback.php">
+                                        <label for="feedback">Give Your Feedback</label>
+                                        <textarea type="text" name="feedback" id="feedback"  placeholder="Your feedback is valuable to us. Tell us your opinion on this product :)" maxlength="500" wrap="hard"></textarea>
+                                        <input type="hidden" name="order_id" value="'.$row['order_id'].'">
+                                        <input class="button" type="submit" value="Submit">
+                                    </form>';
+                                }
+                                else{
+                                    echo ' <h2 style="margin:5px 0"> Thank You For Your Feedback.</h2>';
+                                }
+                            }
+                                echo '
                                 <div class="orderDetails hidden" id="orderDetails'.$row['order_id'].'">
                                     <div class="table ">';
                                     $order_id=$row['order_id'];
@@ -198,7 +217,8 @@
     <script src="/FoodFest/script.js"></script>
     <script src="js/logout.js"></script>
     <script>
-        setTimeout("location.reload(true);", 40000);
+    setTimeout("location.reload(true);", 120000);
     </script>
 </body>
+
 </html>
