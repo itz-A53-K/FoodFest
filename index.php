@@ -32,12 +32,17 @@
 
             while($row=mysqli_fetch_assoc($result)){
                 echo '
-                    <div class="categoryItem">
-                        <a href="/FoodFest/user/food_Item.php?category_id='. $row["category_id"].'"><img src="img/'.$row["category_img_path"].'" alt="" srcset=""></a>
-
-                        <a href="/FoodFest/user/food_Item.php?category_id='. $row["category_id"].' " class="foodName">'.$row["category_name"].'</a>
-
-                    </div>';
+                <a href="/FoodFest/user/food_Item.php?category_id='. $row["category_id"].'">
+                    <div class="item_card">
+                        <div class="img">
+                            <img src="/FoodFest/img/'.$row['category_img_path'].'" alt="" srcset="">
+                        </div>
+                        <div class="desc">
+                            <a href="/FoodFest/user/food_Item.php?category_id='. $row["category_id"].' " class="foodName">'.$row["category_name"].'</a>
+                        </div>
+                    </div>
+                </a>';
+                    
             }
             ?>
             </div>
