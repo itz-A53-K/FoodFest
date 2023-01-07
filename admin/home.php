@@ -13,6 +13,7 @@
 </head>
 
 <body class="body" id="body">
+
     <div class="body2">
         <?php
         include 'partial/_dbConnect.php';
@@ -24,6 +25,9 @@
         else{
             echo '
                 <section class="taskMenu">
+                ';
+                include 'partial/_alert.php';
+                echo '
                     <h1>Task List</h1>
                     <p class="date">Date :&nbsp;'.date("M j , Y").' </p>
                     <div class="taskBtnSec">

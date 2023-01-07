@@ -12,6 +12,10 @@ if ($method=="POST") {
     if($quantity>=11){
         $alert="<b>Sorry! You cann't add more then 10 quantity.</b>";
     }
+    else if($quantity<1){
+        $alert="<b>Sorry! You cann't add less then 1 quantity.</b>";
+
+    }
     else{
 
         $sqlFood_item= "SELECT * FROM `food_items` WHERE food_Id=$food_Id";

@@ -23,7 +23,10 @@
             }
             else{
                 echo '
-                    <section class="menu">
+                <section class="menu">
+                ';
+                include 'partial/_alert.php';
+                echo '
                         <form class="searchForm form" id="search" method="post" action="'. $currentUrl.'">
                             <div>
                                 <input type="search" name="query_adp" placeholder="Serch food item here">

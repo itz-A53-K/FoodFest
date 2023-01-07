@@ -14,14 +14,12 @@ session_start();
                     <a href="addItem.php" class="itemLink" id="addItem">Add new item</a>
                 </li>
                 <li class="listItem">
-                    <a href="modifyItem.php" class="itemLink" id="modifyItem">Modify Item</a>
+                    <a href="modifyItem.php" class="itemLink" id="modifyItem">Modify item</a>
                 </li>
                 <li class="listItem">
                     <a href="deleteItem.php" class="itemLink" id="deleteItem">Delete item</a>
                 </li>
-                <li class="listItem">
-                    <a href="#" class="itemLink">Profit</a>
-                </li>
+                
                 <li class="listItem">
                     <button class="logoutBtn">Logout</button>
                 </li>

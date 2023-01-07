@@ -28,23 +28,40 @@ if ($method=="POST") {
     $destination = '../../img/'.$editFile_name;
 
     if($editFile_name==""){
+        //when image is not edited
         $sql = "UPDATE `food_items` SET `food_Name` = '$editFood_name',`price`='$editPrice', `food_Desc` = '$editFood_desc', `item_Available` = '$editItem_Available',`category_id`='$editCategory' WHERE `food_items`.`food_Id` = '$editFood_Id'";
 
         $result = mysqli_query($conn,$sql);
         
         if ($result) {
-            header("Location:../modifyItem.php");  
-        } 
+            $alert="Modified successfully.";
+        }
+        else{
+            $alert="Some error occured, unable to modify.";
+        }
+
+        session_start();
+        $_SESSION['alert']=$alert;
+        header("Location:../modifyItem.php");
     }
     else{
+        //when image is edited
         $sql = "UPDATE `food_items` SET `food_Name` = '$editFood_name',`price`='$editPrice', `food_Desc` = '$editFood_desc', `item_Available` = '$editItem_Available',`category_id`='$editCategory', `food_Item_img_path` = '$editFile_name'  WHERE `food_items`.`food_Id` = '$editFood_Id'";
 
         $result = mysqli_query($conn,$sql);
         
         if ($result) {
             move_uploaded_file($temp_name,$destination);
-            header("Location:../modifyItem.php");
+            $alert="Modified successfully.";
         }
+        else{
+            $alert="Some error occured, unable to modify.";
+        }
+
+        session_start();
+        $_SESSION['alert']=$alert;
+        header("Location:../modifyItem.php");
+        
     }
 
 

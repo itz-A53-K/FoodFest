@@ -12,6 +12,7 @@
 </head>
 
 <body class="body" id="body">
+    
     <div class="body2">
         <?php
             include 'partial/_dbConnect.php';
@@ -25,6 +26,9 @@
                 echo '
 
             <section class="menu">
+            ';
+                include 'partial/_alert.php';
+                echo '
                 <form class="searchForm form" id="search" method="post" action="'. $currentUrl.'">
                     <div>
                         <input type="search" name="query_adp" placeholder="Serch food item here">

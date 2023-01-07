@@ -21,7 +21,9 @@
             else{
                 echo '
                     <section class="menu">
-
+                    ';
+                    include 'partial/_alert.php';
+                    echo '
                         <h1>Add new food item</h1>
 
                         <form action="partial/_addItemFunctional.php" method="post" enctype="multipart/form-data" class="form">

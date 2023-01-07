@@ -36,9 +36,17 @@ if ($method=="POST") {
     
     if ($result) {
         move_uploaded_file($temp_name,$destination);
-        header("Location:../home.php");
-        
+        $alert="1 new item added successfully.";
     }
+    else{
+        $alert="Some error occured, unable to add.";
+    }
+    
+    session_start();
+    $_SESSION['alert']=$alert;
+    header("Location:../addItem.php");
+        
+    
 
 
 }
