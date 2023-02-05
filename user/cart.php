@@ -145,7 +145,7 @@
                                     <form action="checkout.php" method="post" class="saveAddress">
                                         <input type="hidden" name="user_id" value="'.$user_id.'">
                                         <label for="address">Delivery address :</label>
-                                        <textarea name="address" id="" cols="30" rows="10" placeholder="Please enter your delivery address"  required>'.$address_row['address'].'</textarea>
+                                        <textarea name="address" id="" cols="10" rows="10" placeholder="Please enter your delivery address" maxlength="150" required>'.$address_row['address'].'</textarea>
                                         <label for="ph_No">Phone no.</label>
                                         <input type="text" name="ph_No" id="ph_No" minlength="10" maxlength="10" value="'.$address_row['ph_No'].'"required>
                                         

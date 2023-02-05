@@ -26,7 +26,7 @@
                     $hash = password_hash($userPass,PASSWORD_DEFAULT);
 
                     //inserting data on db
-                    $insert= "INSERT INTO `users` ( `userName`, `email`, `password`, `varificationCode`, `time`) VALUES ('$userName', '$userEmail', '$hash', '', current_timestamp())";
+                    $insert= "INSERT INTO `users` ( `userName`, `email`, `password`, `time`) VALUES ('$userName', '$userEmail', '$hash', current_timestamp())";
                     $insertResult = mysqli_query($conn, $insert);
 
                     if ($insertResult) {

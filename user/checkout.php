@@ -13,6 +13,7 @@
     <?php
         session_start();
         include 'partial/_header.php';
+        include 'partial/_saveDetails.php';
     ?>
     <div class="body">
         <div class="checkout">

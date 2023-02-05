@@ -55,7 +55,7 @@
                     $sno=$noOfRows+1;
                     if($noOfRows==0){
                         echo '<div class="orderCard">
-                        <b>No Order Yet !</b> Try ordering some delicious foods <a href="/FoodFest/user/food_Item.php">here.</a>
+                        <b>No Order Yet !</b> Try ordering some delicious foods <a style="color:rgb(205, 16, 212); text-decoration:underline;" href="/FoodFest/user/food_Item.php">here.</a>
                         </div>';
                     }
                     else{

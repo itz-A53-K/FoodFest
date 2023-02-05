@@ -96,8 +96,8 @@
                                             </div>
                                             <div>
                                                 <!-- <label for="userName">User Name :</label> -->
-                                                <input type="text" id="userName" name="userName" placeholder="User Name"
-                                                    maxlength="10">
+                                                <input type="text" id="userName" name="userName" placeholder="Enter Your Name"
+                                                    maxlength="25">
                                             </div>
                                             
 

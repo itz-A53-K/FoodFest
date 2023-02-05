@@ -14,6 +14,6 @@ if ($_SERVER['REQUEST_METHOD']=="POST") {
         $alert="Your delivery address has been set successfully.";
         session_start();
         $_SESSION['alert']=$alert;
-        header('Location:../cart.php');
+        // header('Location:../checkout.php');
     }
 }
