@@ -1,0 +1,90 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    min-height: 92.6vh;
+    
+}
+.checkout{
+    margin: 17vh 0;
+    width: fit-content;
+    padding: 15px;
+    background-color: rgba(209, 225, 209, 0.753);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+.checkout .details , .checkout .paymentMethod{
+    width: 20vw;
+    margin: 15px 5px;
+    padding: 10px 0;
+    background-color: rgb(249, 247, 247);
+    box-shadow: 0px 0px 10px 2px gray;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+.checkout .details label , .checkout .paymentMethod p{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.checkout .details label::before, .checkout .paymentMethod p::before{
+    background-color: red;
+    border-radius: 10px;
+    content: "";
+    margin-right: 10px;
+    height: 23px;
+    width: 3px;
+}
+
+.details p{
+    padding: 5px 15px;
+    /* overflow-x: scroll; */
+    line-break: anywhere;
+}
+
+.paymentMethod div{
+    margin: 10px;
+    margin-top: 15px;
+    /* padding:  10px 5px; */
+    /* background-color: aqua; */
+    border-radius: 10px;
+}
+.checkout form button{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 157, 0);
+    color: white;
+    font-size: .85rem;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    outline: none;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+.checkout form button:hover{
+    box-shadow: 0px 0px 7px 2px gray;
+    border: 1px solid rgb(255, 157, 0);
+}
+
+.checkout form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.checkout form button p{
+    font-size: .7rem;
+    
+}
+.checkout form button h3{
+    font-size: .85rem;
+}

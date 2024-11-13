@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:ital@1&family=Philosopher&display=swap&family=Nerko+One&family=Rubik+Vinyl&family=Spectral+SC:ital,wght@0,400;1,300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=DM+Sans:wght@500&family=Great+Vibes&family=Kalam&family=Philosopher&family=Roboto+Condensed&family=Teko:wght@300&family=Ubuntu&display=swap');
+
+/* font-family: 'Rubik Distressed', cursive;
+font-family: 'Rubik Glitch', cursive; 
+font-family: 'Indie Flower', cursive;*/
+/* font-family: Okra, Helvetica, sans-serif; */
+
+/* font-family: 'Asap Condensed', sans-serif;
+font-family: 'Nerko One', cursive;
+font-family: 'Rubik Vinyl', cursive;
+font-family: 'Spectral SC', serif; 
+font-family: 'Philosopher', sans-serif;*/
+
+/* font-family: 'Cabin', sans-serif;
+font-family: 'DM Sans', sans-serif;
+font-family: 'Great Vibes', cursive;
+font-family: 'Kalam', cursive;
+font-family: 'Philosopher', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+font-family: 'Teko', sans-serif;
+font-family: 'Ubuntu', sans-serif; */
+
+body{
+    overflow-x: hidden;
+}
+.alert{
+    position: sticky;
+    /* position: fixed; */
+    bottom: 2vh;
+    top: 10vh;
+    left: 29vw;
+    width: 40vw;
+    border: 2px solid rgb(234, 155, 135);
+    background-color: rgb(236, 227, 221);
+    /* background-color: #7f484d; */
+    min-height: 5vh;
+    padding: 10px;
+    margin: 2px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.alert div{
+    font-size: .95rem;
+    /* font-family: 'Asap Condensed', sans-serif; */
+    
+}
+.alert div .error{
+    font-family: 'Philosopher', sans-serif;
+    color: rgb(116, 14, 14);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+
+}
+.alert div .success{
+    font-family: 'Philosopher', sans-serif;
+    color: rgb(15, 145, 35);
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+}
+.alert .closeAlert{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.activePage{
+    /* active page link css */
+    color: #ff004c;
+    /* transition: .22s ease-in; */
+}
+.activePage::after{
+    content: " ";
+    height: 3px;
+    border-radius: 10px;
+    background-color: rgb(255, 8, 8);
+}
+
+
+.btn{
+    align-self: flex-end;
+    background-color: rgb(255, 157, 0);
+    color: white;
+    font-size: .85rem;
+    width: fit-content;
+    padding: 10px 50px;
+    margin: 3px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    outline: none;
+    transition: .2s ease-in;
+    cursor: pointer;
+    
+} 
+.btn:hover {
+    /* color: white;
+    background-color: black; */
+    box-shadow: 0px 0px 7px 2px gray;
+    border: 1px solid rgb(255, 157, 0);
+}
+.btnDisable{
+    
+    align-self: flex-end;
+    background-color: rgba(0, 0, 0, 0.18);
+    color: rgb(54, 53, 53);
+    font-size: .85rem;
+    width: fit-content;
+    padding: 10px 50px;
+    margin: 3px 10px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    outline: none;
+    transition: .2s ease-in;
+    cursor: pointer;
+    
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    width: 35vw;
+    margin: 25px;
+    padding: 15px;
+    background-color: rgba(255, 228, 196, 0.342);
+    box-shadow: 0 0 20px 2px rgb(39, 38, 38);
+    border-radius: 15px;
+}
+.card img{
+    border-radius: 25px;
+    width: 160px;
+    height: 160px;
+}
+.card div{
+    padding: 10px;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+}
+.card div span{
+    padding: 7px 0 0 4px;
+    font-size: .9rem;
+}
+.card div p{
+    padding: 12px 8px;
+    font-size: .8rem;
+    
+}
+.card div form{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.card div input{
+    padding: 2px;
+    /* font-size: .8rem; */
+    width: 4vw;
+    border-radius: 5px;
+    
+}
+.card div input{
+    padding: 2px;
+    /* font-size: .8rem; */
+    width: 4vw;
+    
+}
+
+
+.foodItemContainer{
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.foodItemContainer h2{
+    font-size: 1.5rem;
+}
+.foodItemContainer h2 em{
+    font-size: 1.4rem;
+}
+
+.hidden{
+display: none;
+}
+.overflow{
+    overflow: hidden;
+}
+
+
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,161 @@
+.account {
+    margin-top: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 50px; */
+    height: 92vh;
+    overflow: hidden;
+    background: radial-gradient(rgba(255, 255, 255, 0.553), #ffd6d655);
+}
+
+.form-container {
+    background: rgb(210, 182, 182);
+    width: 400px;
+    height: 500px;
+    position: relative;
+    text-align: center;
+    padding: 40px 0px;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.form-container span {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+
+.form-btn {
+    display: inline-block;
+}
+.form-btn span {
+    color: rgb(30, 28, 28);
+}
+
+.form-container form {
+    /* max-width: 300px; */
+    width: 17vw;
+    padding: 0 18px;
+    position: absolute;
+    top: 110px;
+    transition: transform 1s;
+}
+
+.account input {
+    /* width: 100%; */
+    height: 40px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: .95rem;
+}
+
+.btnLarge {
+    width: 15vw;
+    /* width: 100%; */
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+    display: inline-block;
+    background: #ff532b;
+    color: rgb(0, 0, 0);
+    padding: 7px 25px;
+    /* margin: 30px 21px; */
+    border-radius: 20px;
+    transition: 0.5s ease;
+}
+
+
+.btnLarge:focus {
+    outline: none;
+}
+
+.btnLarge:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 110, 110);
+}
+
+#LoginForm {
+    left: -300px;
+}
+
+#RegForm {
+    left: 46px;
+}
+
+#AdminForm {
+    left: -720px;
+}
+
+form a {
+    font-size: 12px;
+}
+
+#Indicator {
+    width: 100px;
+    border: none;
+    background: #ff523b;
+    height: 5px;
+    margin-top: 8px;
+    transform: translateX(135px);
+    border-radius: 4px;
+}
+
+
+#captcha1 {
+    font-size: 25px;
+    /* font-family: 'Indie Flower', cursive; */
+    font-style: italic;
+    height: 5vh;
+    letter-spacing: 5px;
+
+}
+
+#captcha {
+    font-size: 25px;
+    /* font-family: 'Indie Flower', cursive; */
+    font-style: italic;
+    height: 5vh;
+    letter-spacing: 5px;
+}
+#captchaDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+#captchaDiv h2{
+    font-size: 1.1rem;
+    margin-top: 10px ;
+    width: 100px;
+}
+#captchaDiv input{
+   width: 6.5vw;
+   /* margin-left: 17px; */
+}
+
+
+
+.varification form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20vw;
+}
+.varification {
+    width: 100vw;
+    position: fixed;
+    top: 40vh;
+    background-color: rgb(214, 30, 30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

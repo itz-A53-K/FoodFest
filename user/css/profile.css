@@ -1,0 +1,149 @@
+.body2{
+    width: 98vw;
+    min-height: 85vh;
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hidden{
+    display: none;
+}
+
+.more{
+    width: fit-content;
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid red;
+    cursor: pointer;
+    margin: 10px;
+    font-size: .8rem;
+    background-color: transparent;
+}
+.profile{
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    /* background-color: aqua; */
+    padding: 20px;
+}
+.profile img{
+    height: 180px;
+    width: 200px;
+}
+.profile .profileCard{
+    box-shadow: 0px 0px 5px 3px rgba(212, 211, 211, 0.654);
+    background-color: rgba(246, 246, 241, 0.586);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+}
+.profile h2, .profile h2 em{
+    font-size: 1.3rem;
+    margin: 4px;
+    line-break: anywhere;
+}
+.myOrders{
+    /* background-color: blue; */
+    width: 45vw;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* align-items: center; */
+    
+}
+.myOrders{
+    /* background-color: blue; */
+    width: 45vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 20px;
+    /* align-items: center; */
+}
+.myOrders h1, .profile h1{
+    font-size: 1.4rem;
+    margin: 10px;
+    margin-left: -10px;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+}
+.orderCard{
+    width: 42vw;
+    
+    border: 2px solid violet;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    
+}
+.orderCard .order{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.orderCard .order p{
+    margin-left: 10px;
+    
+}
+
+.table {
+    width: 40vw;
+    border-radius: 10px;
+    background-color: rgba(237, 234, 242, 0.321);
+    margin: 20px 0;
+    padding: 15px;
+    box-shadow: 0 0 10px -5px grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cartItems{
+    min-height: 5vh;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.606);
+    padding: 2px;
+}
+.cartItems .cartItem_Left{
+    margin: 0;
+    margin-right: 15px;
+    line-break: anywhere;
+    width: 25vw;
+    
+}
+.cartItems .cartItem_Left h4{
+    margin: 0;
+}
+.table .cartItems .cartItem_Right {
+    width: 15vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.billDetails{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.billDetails h2{
+    font-size: .9rem;
+    margin: 15px;
+    margin-left: -5px;
+    text-decoration: underline;
+}
+.billDetails .row{
+    height: 20px;
+    margin: 3px 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.billDetails .row h4{
+    margin: 0px;
+}

@@ -1,0 +1,168 @@
+.taskMenu{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 24vw;
+    background-color: rgb(251, 250, 249);
+    padding: 5vh 10px ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* overflow-y: scroll; */
+}
+.taskMenu h1{
+    display: flex;
+    align-self: start;
+    margin: 5px 15px;
+    font-size: 1.4rem;
+}
+.taskMenu .date{
+    display: flex;
+    align-self: start;
+    margin: 15px;
+    margin-top: 0; 
+}
+
+.taskBtnSec{
+    margin: 5px 0;
+    margin-bottom: 4vh;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.taskBtnSec .taskBtn{
+    padding: 6px 25px;   
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid rgb(234, 213, 213);
+    font-size: .8rem;
+    margin: 0 5px;
+    cursor: pointer;
+
+}
+
+.ClickedTaskBtn {
+    color: white;
+    background-color: rgb(36, 84, 216);
+    transition: .3s ease-in-out;
+}
+.ClickedTaskBtn:hover{
+    background-color: rgb(36, 84, 216);
+    border: 1px solid rgb(68, 127, 209);
+}
+
+.taskList{
+    overflow-y: scroll;
+    
+}
+.taskCard{
+    width: 17vw;
+    margin: 4vh 20px;
+    padding: 10px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 2px gray;
+}
+.taskCard .price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.orderedItem{
+    width: 60vw;
+    background-color: rgb(242, 245, 246);
+    padding: 5vh 10px;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+.orderedItem h2{
+    display: flex;
+    align-self: start;
+    margin: 25px;
+    font-size: 1.1rem;
+}
+.table{
+    border-radius: 10px;
+    background-color: rgba(237, 234, 242, 0.321);
+    margin: 20px 2vw;
+    padding: 15px;
+    box-shadow: 0 0 10px -5px gray;
+}
+
+.table .row{
+    min-height: 5vh;
+    width: 50vw;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.606);
+}
+.table .row div{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    
+}
+.table .row div:nth-child(2){
+    width: 18vw;
+}
+
+.table .itemImg{
+        border-radius: 25px;
+        width: 80px;
+        height: 80px;
+}
+.table .grandTotal{
+    display: flex;
+    justify-content: end;
+    margin-top: 25px;
+    font-size: 1.4rem;
+}
+
+.acptBtn{
+    align-self: flex-end;
+    background-color: rgba(17, 255, 0, 0.866);
+    color: rgb(26, 24, 24);
+    font-size: .95rem;
+    width: fit-content;
+    padding: 10px 50px;
+    margin: 3px;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+.acptBtn:hover{
+    border: 2px solid rgb(115, 255, 0);
+}
+.acptedBtn{
+    align-self: flex-end;
+    /* background-color: rgb(115, 255, 0); */
+    background-color: rgb(0 5 255 / 60%);
+    color: white;
+    font-size: .95rem;
+    width: fit-content;
+    padding: 10px 50px;
+    margin: 3px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.clickedTask::before{
+    background-color: rgb(0, 0, 255);
+    border-radius: 10px;
+    content: "";
+    margin-right: 5px;
+    height: auto;
+    width: 3px;
+}

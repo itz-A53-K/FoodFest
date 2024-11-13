@@ -5,26 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samir awesome foods</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header_footer.css">
+    <title>Food Fest - Welcome to Food Fest</title>
+    <link rel="stylesheet" href="user/css/utils.css">
+    <link rel="stylesheet" href="user/css/index.css">
+    <link rel="stylesheet" href="user/css/header_footer.css">
 </head>
 
 <body>
-    <?php include 'partial/_header.php';?>
+    <?php 
+    include 'user/partial/_header.php';
+    include 'user/partial/_dbConnect.php';
+    ?>
+    <section class="homeBody">
+        <?php
+            include 'user/partial/_alert.php';
+        ?>
+        <div class="foodCategory" id="foodCategory">
+            <h3>Categories</h3>
+            <div class="categories">
+                <?php
+            $sql= "SELECT * FROM `food_categories`";
+            $result= mysqli_query($conn,$sql);
 
-    <div class="loginModule" id="loginModule">
-        <form action="partial/_loginFunctional.php" method="post" class="form" id="form">
-            <div>
-                <label for="loginUserName">Email :</label>
-                <input type="text" id="loginUserName" name="loginUserName">
+            while($row=mysqli_fetch_assoc($result)){
+                echo '
+                    <div class="categoryItem">
+                        <a href="/FoodFest/user/food_Item.php?category_id='. $row["category_id"].'"><img src="img/'.$row["category_img_path"].'" alt="" srcset=""></a>
+
+                        <a href="/FoodFest/user/food_Item.php?category_id='. $row["category_id"].' " class="foodName">'.$row["category_name"].'</a>
+
+                    </div>';
+            }
+            ?>
             </div>
-            <div>
-                <label for="loginPassword">Email :</label>
-                <input type="text" id="loginPassword" name="loginPassword">
-            </div>
-        </form>
-    </div>
+        </div>
+        
+    </section>
+    
+
+    <footer>
+        <h1>Copyright &copy; FoodFest.com</h1>
+        <p>Prepared by: Abinash, Samir.</p>
+    </footer>
+    <script src="/FoodFest/script.js"></script>
+    <script src="/FoodFest/user/js/logout.js"></script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
 $servername="localhost";
 $username="root";
 $password="";
-$database="";
+$database="food Fest";
 
 $conn = mysqli_connect($servername,$username,$password,$database);
 

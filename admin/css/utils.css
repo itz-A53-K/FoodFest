@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgba(116, 124, 130, 0.861);
+    /* overflow: hidden; */
+}
+
+.body2{
+    display: flex;
+    width: 95vw;
+    height: 93vh;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.847);
+    border-radius: 15px;
+}
+
+
+.activePage{
+    /* active page link css */
+    /* color: #ff004c; */
+    transition: .2s ease-in;
+}
+.activePage::after{
+    content: " ";
+    height: 1px;
+    background-color: gold;
+}
+
+
+.navbar{
+    min-width: 11vw;
+    /* height: auto; */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar h1{
+    margin: 4vh 0;
+    font-size: 1.05rem;
+    color: orange;
+}
+.navbar h1 span{
+    font-size: 1.15rem;
+    color: rgb(24, 172, 192);
+}
+.navbar h2{
+    margin-bottom: 8vh ;
+    font-size: 1.25rem;
+    color: rgb(192, 24, 119);
+}
+
+.foodItemList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.listItem{
+    list-style: none;
+    margin: 30px 0;
+}
+.listItem a{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: .5s;
+}
+.listItem a:hover{
+    color: rgba(223, 134, 17, 0.857);
+}
+.navbar .logoutBtn{
+    font-size: 1rem;
+    background-color: violet;
+    padding: 7px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+.navbar .logoutBtn:hover{
+    background-color: rgba(225, 83, 199, 0.87);
+    /* background-color: violet; */
+    border-radius: 10px;
+    border: 1px solid rgb(167, 102, 184);
+}
+
+
+.menu{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 82vw;
+    background-color: rgb(239, 238, 236);
+    padding: 2vh 12vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+.menu button{
+    align-self: flex-end;
+    background-color: rgb(255, 157, 0);
+    color: white;
+    font-size: .85rem;
+    width: fit-content;
+    padding: 10px 50px;
+    margin: 3px;
+    border: 2px solid white;
+    border-radius: 10px;
+    outline: none;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
+.menu button:hover{
+    box-shadow: 0px 0px 7px 2px gray;
+    border: 2px solid rgb(255, 157, 0);
+    
+}
+
+#goToTop{
+    position: fixed;
+    bottom: 5px;
+    right: 18px;
+}
+#goToTop button{
+    padding: 10px;
+    background-color: rgb(4, 22, 187);
+}
+
+
+.foodItemList{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+}
+
+
+.card{
+    display: flex;
+    align-items: center;
+    width: 35vw;
+    margin: 15px;
+    padding: 5px 10px;
+    background-color: rgba(255, 228, 196, 0.342);
+    box-shadow: 0 0 20px 2px rgb(39, 38, 38);
+    border-radius: 15px;
+}
+.card img{
+    border-radius: 25px;
+    width: 160px;
+    height: 160px;
+}
+.card div{
+    padding: 10px;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+}
+.card div span{
+    padding: 7px 0 0 4px;
+    font-size: .9rem;
+}
+.card div p{
+    padding: 12px 8px;
+    font-size: .8rem;
+    
+}
+
+
+.overflow{
+    overflow: hidden;
+}
+
+
+.foodItemList h2{
+    width: 40vw;
+    display: flex;
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+.searchResults h2 em{
+    font-size: 1.5rem;
+}
+.foodItemList h5{
+    font-size: .85rem;
+    margin: 10px;
+}
